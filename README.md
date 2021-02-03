@@ -1,7 +1,8 @@
 Version: [v3.0.0]
 
 Changelog:
-- zweite Änderung test
+- erste Änderung
+- zweite Änderung
 - dritte Änderung
 
 
