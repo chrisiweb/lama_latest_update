@@ -1,4 +1,4 @@
-Version: [v3.0.0]
+Version: [v3.1.2]
 
 Changelog:
 - erste Änderung
