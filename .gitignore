@@ -1,0 +1,11 @@
+*.aux
+*.bbl
+*.blg
+*.dvi
+*.log
+*.pdf
+*.ps
+*.synctex
+__pycache__/
+Teildokument/
+
