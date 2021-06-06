@@ -1,7 +1,6 @@
-Version: [v3.1.2]
+Version: [v4.0.0]
 
-Changelog:
-- erste Änderung
-- zweite Änderung
+v4.0.0:
+- move database to GitHub
 
 
