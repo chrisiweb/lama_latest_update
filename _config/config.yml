@@ -243,7 +243,8 @@ zusatzthemen_beschreibung:
     "pwlu": "Potenzen, Wurzeln, Logarithmen und Ungleichungen"
     "rf": "Reelle Funktionen"    
     "re": "Reihen"
-    "sws": "Stetgie Wahrscheinlichkeitsverteilungen; Beurteilende Statistik"
+    "sdb": "Stetigkeit und Differenzierbarkeit"
+    "sws": "Stetige Wahrscheinlichkeitsverteilungen; Beurteilende Statistik"
     "tr": "Trigonometrie"
     "vag2": "Vektoren und analytische Geometrie"
     "vag3": "Vektoren und analytische Geometrie in R3 und Rn"
@@ -320,7 +321,24 @@ dict_gk:
     "ag51": "AG-L 5.1"
     "ag52": "AG-L 5.2"
     "ag53": "AG-L 5.3"
-       
+    
+    "an11": "AN 1.1"
+    "an12": "AN 1.2"
+    "an13": "AN 1.3"
+    "an14": "AN 1.4"
+    "an15": "AN-L 1.5"
+    
+    "an21": "AN 2.1"
+    "an22": "AN-L 2.2"
+    "an31": "AN 3.1"
+    "an32": "AN 3.2"
+    "an33": "AN 3.3"
+    
+    "an34": "AN-L 3.4"
+    "an41": "AN 4.1"
+    "an42": "AN 4.2"
+    "an43": "AN 4.3"
+    
     "fa11": "FA 1.1"
     "fa12": "FA 1.2"
     "fa13": "FA 1.3"
@@ -373,22 +391,6 @@ dict_gk:
     "fa82": "FA-L 8.2"
     "fa83": "FA-L 8.3"
     "fa84": "FA-L 8.4"
-
-    "an11": "AN 1.1"
-    "an12": "AN 1.2"
-    "an13": "AN 1.3"
-    "an14": "AN 1.4"
-    "an15": "AN-L 1.5"
-    
-    "an21": "AN 2.1"
-    "an22": "AN-L 2.2"
-    "an31": "AN 3.1"
-    "an32": "AN 3.2"
-    "an33": "AN 3.3"
-    "an34": "AN-L 3.4"
-    "an41": "AN 4.1"
-    "an42": "AN 4.2"
-    "an43": "AN 4.3"
     
     "ws11": "WS 1.1"
     "ws12": "WS 1.2"
