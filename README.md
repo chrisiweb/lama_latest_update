@@ -1,10 +1,10 @@
-LaMA - LaTeX Mathematik Assistent
+# LaMA - LaTeX Mathematik Assistent
 
 Version: [v3.0.0]
 
 LaMA ist ein Programm, das AHS-Mathematiklehrer·innen das systematische Abspeichern von Unterstufen-, Oberstufen-Typ1- und Oberstufen-Typ2-Aufgabe ermöglicht. LaMA erleichtert die Suche dieser Aufgaben sowie die Erstellung von Prüfungen, wie Schularbeiten, Grundkompetenzchecks, usw.  
 
-CHANGELOG
+## CHANGELOG
 
 v3.0.0:
 - move database to GitHub
