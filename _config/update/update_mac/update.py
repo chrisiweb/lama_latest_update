@@ -7,7 +7,7 @@ from time import sleep
 import subprocess
 import shutil
 
-path_programm=os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(sys.argv[0])))))
+path_programm=os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(sys.argv[0]))))))
 #print(path_programm)
 #print(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(sys.argv[0])))))
 
