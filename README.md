@@ -6,6 +6,7 @@ __LaMA ist ein Programm, das AHS-Mathematiklehrer·innen das systematische Abspe
 ## CHANGELOG
 BETA v3.1.0:
 - new: change mode of "notenschluessel" (half points, percentage)
+- new: save individual percentage (notenschluessel)
 
 v3.0.3:
 - bug fix: initiate LaMA issues
