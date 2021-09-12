@@ -5,11 +5,10 @@ __LaMA ist ein Programm, das AHS-Mathematiklehrer·innen das systematische Abspe
 
 ## CHANGELOG
 v3.1.4:
-bug fix: save lama_settings in AppData folder
-
+- bug fix: save lama_settings in AppData folder
 
 v3.1.3:
-bug fix: disable developer mode on mac
+- bug fix: disable developer mode on mac
 
 v3.1.2:
 - bug fix: send feedback
