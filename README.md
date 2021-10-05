@@ -6,7 +6,7 @@ __LaMA ist ein Programm, das AHS-Mathematiklehrer·innen das systematische Abspe
 ## CHANGELOG
 v3.1.6: BETA
 - bug fix: save local variations
-- bug fix: compile with -dALLOWPSTRANSPARENCY to enable transparency in new Ghostscript version
+- bug fix: compile with -dALLOWPSTRANSPARENCY to enable transparency in new Ghostscript version (> 9.53.3)
 
 v3.1.5:
 - bug fix: create automatic groups
