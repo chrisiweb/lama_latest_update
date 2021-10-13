@@ -9,6 +9,7 @@ v3.1.6: BETA
 - bug fix: compile with -dALLOWPSTRANSPARENCY to enable transparency in new Ghostscript version (> 9.53.3)
 - bug fix: feedback combobox
 - bug fix: hide/show items
+- bug fix: search mode LaMA Cria
 
 v3.1.5:
 - bug fix: create automatic groups
