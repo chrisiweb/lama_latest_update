@@ -8,6 +8,9 @@ v3.2.0: BETA
 - new function: advanced search
 - bug fix: edit drafts
 - bug fix: set title sage
+- bug fix: change grade for drafts
+- bug fix: edit files with images
+- bug fix: speed up load lama file
 
 v3.1.6:
 - bug fix: save local variations
