@@ -6,6 +6,8 @@ __LaMA ist ein Programm, das AHS-Mathematiklehrer·innen das systematische Abspe
 ## CHANGELOG
 v3.2.0: BETA
 - new function: advanced search
+- new function: cleanup database (Admin)
+- new function: connect file with exisiting images
 - bug fix: edit drafts
 - bug fix: set title sage
 - bug fix: change grade for drafts
