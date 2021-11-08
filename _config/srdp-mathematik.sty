@@ -10,7 +10,7 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}[1996/12/26]
-\ProvidesPackage{srdp-mathematik}[2021/03/29 v1.9.0 Standard-Schularbeitsformate]
+\ProvidesPackage{srdp-mathematik}[2021/11/04 v1.9.1 Standard-Schularbeitsformate]
 
 
 \usepackage{color}
@@ -30,7 +30,7 @@
 \usepackage{framed}
 \usepackage{array}
 \usepackage{tabularx}
-\usepackage{tabu}
+\usepackage{srdp-tables}
 \usepackage{environ}
 \usepackage{cancel}
 \usepackage{spreadtab}
@@ -173,20 +173,20 @@
 \makeatletter
 
 \NewEnviron{beispiel}[2][\unskip]{\begin{minipage}[t]{0.88\textwidth}
-\addtocounter{number}{1}
-\begin{enumerate}
-	\item[\thenumber.] \BODY
-\end{enumerate}
-
-
-\end{minipage} 
-\begin{minipage}[t]{0.1\textwidth} \raggedleft \small{\_\_\_/#2\addtocounter{punkte}{#2}\\\ifthenelse{\equal{#1}{\string 1/2}}
-	{$\left[{}^1{\mskip -5mu/\mskip -3mu}_2\right]$}
-	{\antwort{\footnotesize #1 \normalsize}}}
-\end{minipage}
-\vspace{\baselineskip}
-
-}
+	\addtocounter{number}{1}
+	\begin{enumerate}
+		\item[\thenumber.] {\BODY}
+	\end{enumerate}
+	
+	
+	\end{minipage} 
+	\begin{minipage}[t]{0.1\textwidth} \raggedleft \small{\_\_\_/#2\addtocounter{punkte}{#2}\\\ifthenelse{\equal{#1}{\string 1/2}}
+		{$\left[{}^1{\mskip -5mu/\mskip -3mu}_2\right]$}
+		{\antwort{\footnotesize #1 \normalsize}}}
+	\end{minipage}
+	\vspace{\baselineskip}
+	
+	}
 
 
 \newcommand{\pkte}[2][]{\hfill[0\,/\,\ifthenelse{\equal{#1}{\string 1/2}}{${}^1{\mskip -5mu/\mskip -3mu}_2$\,/\,}{}#2]}
@@ -198,6 +198,7 @@
 %%%%%%%%%%%%% Teil 2 Überschrift %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %
+
 \newcommand{\TEILZWEI}{\newpage \ifodd\value{page}\thispagestyle{empty}\hbox{}\newpage\else \fi
 \begin{flushright}
 \small Name: \rule{7cm}{0.4pt} \normalsize
@@ -250,7 +251,7 @@
 \renewcommand*{\item}{\setcounter{subitemcounter}{0}\itemalt}
 \subsubsection{Aufgabenstellung:}%
 \begin{enumerate}[a),leftmargin=0pt]
-\item \BODY
+\item {\BODY}
 \end{enumerate}%
 \let\item\itemalt}
 
@@ -258,7 +259,7 @@
 \renewcommand*{\item}{\setcounter{subitemcounter}{0}\itemalt}
 \antwort{%%
 \begin{enumerate}[a),leftmargin=0pt]
-\item \BODY
+\item {\BODY}
 \end{enumerate}}%
 \let\item\itemalt}
 
@@ -895,11 +896,12 @@ Complete the following sentence by putting a cross next to one of the given poss
 \newcommand\tfmultiplechoice[3][5]{ %Anzahl der Antwortmoeglichkeiten, Standard: 5
   \bgroup
   \jeroen@set@keys{#3}%%
-\setcounter{counter}{0}		
+\setcounter{counter}{0}\setcounter{acheck}{0}\setcounter{bcheck}{0}\setcounter{ccheck}{0}\setcounter{dcheck}{0}\setcounter{echeck}{0}\setcounter{fcheck}{0}\setcounter{gcheck}{0}\setcounter{hcheck}{0}\setcounter{icheck}{0}
 \centering 
 \tabulinesep=3mm
 \pgfmathsetseed{\theZufall}
 \declarenumlist{group}{1}{#1}
+\pgfmathrandomitem\z{group}\setcounter{antworta}{\z}\prunelist{group}
 \ifthenelse{\numexpr#1 > 1}{\pgfmathrandomitem\z{group}\setcounter{antwortb}{\z}\prunelist{group}}{}
 \ifthenelse{\numexpr#1 > 2}{\pgfmathrandomitem\z{group}\setcounter{antwortc}{\z}\prunelist{group}}{}
 \ifthenelse{\numexpr#1 > 3}{\pgfmathrandomitem\z{group}\setcounter{antwortd}{\z}\prunelist{group}}{}
