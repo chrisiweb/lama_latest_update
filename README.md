@@ -8,6 +8,7 @@ v3.2.1: [BETA]
 - bug fix: search typ2-files, when no GKs are selected
 - bug fix: update srdp-mathematik.sty (& hide tabu.sty)
 - bug fix: refresh Miktex FNDB when srdp-tables.sty does not exist
+- bug fix: bookmark only for sections
 
 v3.2.0:
 - new function: advanced search
