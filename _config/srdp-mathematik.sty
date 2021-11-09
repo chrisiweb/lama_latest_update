@@ -10,7 +10,7 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}[1996/12/26]
-\ProvidesPackage{srdp-mathematik}[2021/11/04 v1.9.1 Standard-Schularbeitsformate]
+\ProvidesPackage{srdp-mathematik}[2021/11/09 v1.9.2 Standard-Schularbeitsformate]
 
 
 \usepackage{color}
@@ -22,7 +22,7 @@
 \usepackage{pdflscape}
 \usepackage{varwidth}
 \usepackage{wasysym}
-\usepackage{microtype}
+% \usepackage{microtype}
 \usepackage{pstricks-add}
 \usepackage{trimspaces}
 \usepackage{colortbl}
@@ -752,7 +752,10 @@ Complete the following sentence by putting a cross next to one of the given poss
 \newcommand\langmultiplechoice[2][5]{ %Anzahl der Antwortmoeglichkeiten, Standard: 5
   \bgroup
   \jeroen@set@keys{#2}%%
-	\pgfmathsetseed{\theZufall}
+
+\centering 
+\tabulinesep=3mm
+\pgfmathsetseed{\theZufall}
 \declarenumlist{group}{1}{#1}
 \pgfmathrandomitem\z{group}\setcounter{antworta}{\z}\prunelist{group}
 \ifthenelse{\numexpr#1 > 1}{\pgfmathrandomitem\z{group}\setcounter{antwortb}{\z}\prunelist{group}}{}
@@ -764,10 +767,8 @@ Complete the following sentence by putting a cross next to one of the given poss
 \ifthenelse{\numexpr#1 > 7}{\pgfmathrandomitem\z{group}\setcounter{antworth}{\z}\prunelist{group}}{}
 \ifthenelse{\numexpr#1 > 8}{\pgfmathrandomitem\z{group}\setcounter{antworti}{\z}\prunelist{group}}{}
 
-\centering 
-\tabulinesep=3mm
 \meinlr{
-\begin{center}
+\centering
 \begin{tabu}{|T|c|}\hline
 \forloop{ct}{1}{\value{ct}<3}
 {\ifthenelse{\value{ct}=\theantworta}{\jeroen@get{L1}}{\ifthenelse{\value{ct}=\theantwortb}{\jeroen@get{L2}}{\ifthenelse{\value{ct}=\theantwortc}{\jeroen@get{L3}}{\ifthenelse{\value{ct}=\theantwortd}{\jeroen@get{L4}}{\ifthenelse{\value{ct}=\theantworte}{\jeroen@get{L5}}{\ifthenelse{\value{ct}=\theantwortf}{\jeroen@get{L6}}{\ifthenelse{\value{ct}=\theantwortg}{\jeroen@get{L7}}{\ifthenelse{\value{ct}=\theantworth}{\jeroen@get{L8}}{{\jeroen@get{L9}}}}}}}}}}& 
@@ -784,9 +785,9 @@ Complete the following sentence by putting a cross next to one of the given poss
 \ifthenelse{\jeroen@get{A1}=1 \OR \jeroen@get{A2}=1 \OR \jeroen@get{A3}=1\OR \jeroen@get{A4}=1\OR \jeroen@get{A5}=1\OR \jeroen@get{A6}=1 \OR \jeroen@get{A7}=1 \OR \jeroen@get{A8}=1 \OR \jeroen@get{A9}=1 \AND \theantworta=3}{\color[rgb]{1,0,0}\XBox\color[rgb]{0,0,0}}{}\ifthenelse{\jeroen@get{A1}=2 \OR \jeroen@get{A2}=2 \OR \jeroen@get{A3}=2\OR \jeroen@get{A4}=2\OR \jeroen@get{A5}=2\OR \jeroen@get{A6}=2 \OR \jeroen@get{A7}=2 \OR \jeroen@get{A8}=2 \OR \jeroen@get{A9}=2 \AND \theantwortb=3}{\color[rgb]{1,0,0}\XBox\color[rgb]{0,0,0}}{}\ifthenelse{\jeroen@get{A1}=3 \OR \jeroen@get{A2}=3 \OR \jeroen@get{A3}=3\OR \jeroen@get{A4}=3\OR \jeroen@get{A5}=3\OR \jeroen@get{A6}=3 \OR \jeroen@get{A7}=3 \OR \jeroen@get{A8}=3 \OR \jeroen@get{A9}=3 \AND \theantwortc=3}{\color[rgb]{1,0,0}\XBox\color[rgb]{0,0,0}}{}\ifthenelse{\jeroen@get{A1}=4 \OR \jeroen@get{A2}=4 \OR \jeroen@get{A3}=4\OR \jeroen@get{A4}=4\OR \jeroen@get{A5}=4\OR \jeroen@get{A6}=4 \OR \jeroen@get{A7}=4 \OR \jeroen@get{A8}=4 \OR \jeroen@get{A9}=4 \AND \theantwortd=3}{\color[rgb]{1,0,0}\XBox\color[rgb]{0,0,0}}{}\ifthenelse{\jeroen@get{A1}=5 \OR \jeroen@get{A2}=5 \OR \jeroen@get{A3}=5\OR \jeroen@get{A4}=5\OR \jeroen@get{A5}=5\OR \jeroen@get{A6}=5 \OR \jeroen@get{A7}=5 \OR \jeroen@get{A8}=5 \OR \jeroen@get{A9}=5 \AND \theantworte=3}{\color[rgb]{1,0,0}\XBox\color[rgb]{0,0,0}}{}\ifthenelse{\jeroen@get{A1}=6 \OR \jeroen@get{A2}=6 \OR \jeroen@get{A3}=6\OR \jeroen@get{A4}=6\OR \jeroen@get{A5}=6\OR \jeroen@get{A6}=6 \OR \jeroen@get{A7}=6 \OR \jeroen@get{A8}=6 \OR \jeroen@get{A9}=6 \AND \theantwortf=3}{\color[rgb]{1,0,0}\XBox\color[rgb]{0,0,0}}{}\ifthenelse{\jeroen@get{A1}=7 \OR \jeroen@get{A2}=7 \OR \jeroen@get{A3}=7\OR \jeroen@get{A4}=7\OR \jeroen@get{A5}=7\OR \jeroen@get{A6}=7 \OR \jeroen@get{A7}=7 \OR \jeroen@get{A8}=7 \OR \jeroen@get{A9}=7 \AND \theantwortg=3}{\color[rgb]{1,0,0}\XBox\color[rgb]{0,0,0}}{}\ifthenelse{\jeroen@get{A1}=8 \OR \jeroen@get{A2}=8 \OR \jeroen@get{A3}=8\OR \jeroen@get{A4}=8\OR \jeroen@get{A5}=8\OR \jeroen@get{A6}=8 \OR \jeroen@get{A7}=8 \OR \jeroen@get{A8}=8 \OR \jeroen@get{A9}=8 \AND \theantworth=3}{\color[rgb]{1,0,0}\XBox\color[rgb]{0,0,0}}{}\ifthenelse{\jeroen@get{A1}=9 \OR \jeroen@get{A2}=9 \OR \jeroen@get{A3}=9\OR \jeroen@get{A4}=9\OR \jeroen@get{A5}=9\OR \jeroen@get{A6}=9 \OR \jeroen@get{A7}=9 \OR \jeroen@get{A8}=9 \OR \jeroen@get{A9}=9 \AND \theantworti=3}{\color[rgb]{1,0,0}\XBox\color[rgb]{0,0,0}}{}
 \else
 \Square\fi\\ \hline
-\end{tabu}
-\end{center}}
+\end{tabu}}
 {\ifnum \numexpr#1>3
+\centering
 \begin{tabu}{|T|c|}
 \hline
 \forloop{ct}{4}{\value{ct}<\numexpr#1}
