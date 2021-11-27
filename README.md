@@ -8,7 +8,7 @@ v3.2.2:
 - bug fix: save .lama file, when create sage file
 - bug fix: check internet connection, when editing drafts
 - bug fix: enable date in sage
-- bug fix: excaüe error, when database is not refreshed
+- bug fix: escape error, when database is not refreshed
 
 v3.2.1:
 - bug fix: search typ2-files, when no GKs are selected
