@@ -10,7 +10,7 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}[1996/12/26]
-\ProvidesPackage{srdp-mathematik}[2021/12/22 v1.9.3 Standard-Schularbeitsformate]
+\ProvidesPackage{srdp-mathematik}[2022/01/02 v1.9.4 Standard-Schularbeitsformate]
 
 
 \usepackage{color}
@@ -22,7 +22,6 @@
 \usepackage{pdflscape}
 \usepackage{varwidth}
 \usepackage{wasysym}
-% \usepackage{microtype}
 \usepackage{pstricks-add}
 \usepackage{trimspaces}
 \usepackage{colortbl}
@@ -186,12 +185,8 @@
   \scriptsize$\rfrac{#2}{2}$\small\else#1\fi}
 \makeatother
 
-\makeatletter
-
-\NewEnviron{beispiel}[2][\unskip]{\renewcommand{\arraystretch}{0}\tiny%
-\begin{spreadtab}[\STsavecell\halbepunkte{a1} \STsavecell\halbepunktetrunc{b1}]{{tabular}{ccc}}\SThidecol#2/2&\SThidecol trunc(a1,0)\\\end{spreadtab}\normalsize\renewcommand{\arraystretch}{1}%
-
-\begin{minipage}[t]{0.88\textwidth}
+\NewEnviron{beispiel}[2][\unskip]{\FPeval{\halbepunkte}{clip(#2/2)}%
+	\begin{minipage}[t]{0.88\textwidth}
 	\addtocounter{number}{1}
 	\begin{enumerate}
 		\item[\thenumber.] {\BODY}
@@ -205,11 +200,6 @@
 	\vspace{\baselineskip}
 	
 	}
-% \scriptsize$\rfrac{1}{2}$\small
-%\ifthenelse{\equal{#1}{\string 1/2}}
-%{$\left[{}^1{\mskip -5mu/\mskip -3mu}_2\right]$}
-
-% \newcommand{\pkte}[2][]{\hfill[0\,/\,\ifthenelse{\equal{#1}{\string 1/2}}{${}^1{\mskip -5mu/\mskip -3mu}_2$\,/\,}{}#2]}
 
 \newcommand{\defgesamtpunkte}[1]{\setcounter{punkte}{#1}}
 %
@@ -363,6 +353,27 @@ Erreichte Punkte &Gesamt&\multicolumn{2}{c}{Note}& \\
 \end{tabular}
 \end{center}\STautoround{}\normalsize}
 
+
+
+\NewDocumentCommand{\punkteverteilung}{ O{} O{} O{}  m m m m}{
+\null\vfill
+\STautoround{3}\renewcommand{\arraystretch}{0}\tiny
+\begin{spreadtab}[\STsavecell\gutgenau{b2} \STsavecell\befriedigendgenau{c2} \STsavecell\genuegendgenau{d2} \STsavecell\nichtgenuegendgenau{e2} 
+\STsavecell\gut{b3}  \STsavecell\befriedigend{c3} \STsavecell\genuegend{d3} \STsavecell\nichtgenuegend{e3}  
+\STsavecell\gutpluseins{b4} \STsavecell\befriedigendpluseins{c4}  \STsavecell\genuegendpluseins{d4} \STsavecell\nichtgenuegendpluseins{e4} \STsavecell\gutminuseins{b5} \STsavecell\befriedigendminuseins{c5} \STsavecell\genuegendminuseins{d5} \STsavecell\nichtgenuegendminuseins{e5}]{{tabular}{ccccc}}
+	\SThidecol\thepunkte &\SThidecol 1 &\SThidecol2 &\SThidecol 3 &\SThidecol 4 \\ 
+	& a1*#4 &a1*#5 & a1*#6 & a1*#7 \\
+	&trunc(a1*#4,0) & trunc(a1*#5,0) &trunc(a1*#6,0) &trunc(a1*#7,0) \\
+	&b3+1 &c3+1 &d3+1 & e3+1\\
+	&b3-1 &c3-1 &d3-1 & e3-1\\
+\end{spreadtab}
+\footnotesize\renewcommand{\arraystretch}{1}
+\begin{center}
+\begin{tabular}{|C{3cm}C{3cm}C{3cm}C{3cm}C{3cm}|}\hline
+\ifthenelse{\equal{#3}{ms}}{}{\scriptsize{Sehr gut}} & \ifthenelse{\equal{#3}{ms}}{}{\scriptsize{Gut}} & \scriptsize{Befriedigend} & \scriptsize{Gen\"ugend} & \scriptsize{Nicht gen\"ugend} \\
+\ifthenelse{\equal{#3}{ms}}{}{\scriptsize{\thepunkte ~ - \ifdim\gut pt=\gutgenau pt \gut\else\gutpluseins\fi}}& \ifthenelse{\equal{#3}{ms}}{}{\scriptsize{\ifdim\gut pt=\gutgenau pt \gutminuseins\else\gut\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~ - \ifdim\befriedigend pt=\befriedigendgenau pt \befriedigend\else\befriedigendpluseins\fi}} & \scriptsize{\ifdim\befriedigend pt=\befriedigendgenau pt \befriedigendminuseins\else\befriedigend\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~ - \ifdim\genuegend pt=\genuegendgenau pt \genuegend\else\genuegendpluseins\fi} & \scriptsize{\ifdim\genuegend pt=\genuegendgenau pt \genuegendminuseins\else\genuegend\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~ - \ifdim\nichtgenuegend pt=\nichtgenuegendgenau pt \nichtgenuegend\else\nichtgenuegendpluseins\fi} & \scriptsize{unter \ifdim\nichtgenuegend pt=\nichtgenuegendgenau pt \nichtgenuegend\else\nichtgenuegendpluseins\fi} \\ \hline
+\end{tabular}
+\end{center}\STautoround{}\normalsize}
 % for legacy reason
 \newcommand{\notenschluesselop}[5][1]{\notenschluessel[#1]{#2}{#3}{#4}{#5}} 
 %%%%%%%%%%%%%%%%%
@@ -443,7 +454,32 @@ title1/.initial=,
 %
 \newcounter{teileins}
 \newcounter{ausgleichspkte}		
-\newcounter{teilzwei}	
+\newcounter{teilzwei}
+
+
+\newcommand{\beurteilung}[5]{
+\bgroup
+\jeroen@set@keys{#5}%
+\setcounter{teileins}{\jeroen@get{T1}}%
+\setcounter{teilzwei}{\jeroen@get{T2}}%
+\FPeval{total}{clip(\jeroen@get{T1}+\jeroen@get{T2})}%
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{p{5cm}p{4cm}l}
+&Punkte&davon erreicht\\ \hline
+Teil 1&\jeroen@get{T1}&\\\hline
+Teil 2  &\jeroen@get{T2} &\\\hline
+& $\Sigma= \total$ & \\\hline
+\end{tabular}\vspace{1.5cm}
+
+Beurteilung: \rule{10.5cm}{0.4pt}
+\end{center}
+
+\defgesamtpunkte{\total}\punkteverteilung[1/2]{#1}{#2}{#3}{#4}\defgesamtpunkte{0}
+\egroup
+}
+
 \newcommand{\beurteilungsraster}[5]{
 \bgroup
   \jeroen@set@keys{#5}
