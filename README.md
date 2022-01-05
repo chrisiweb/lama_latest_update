@@ -7,9 +7,11 @@ __LaMA ist ein Programm, das AHS-Mathematiklehrer·innen das systematische Abspe
 v3.3.0: [BETA]
 - new: show GK-Catalogue
 - new: different percentages of grades in LaMA and Cria
+- new: 1/2 points for Typ1-examples
 - new (admin): save edited files directly in sage
 - bug fix: auto-refresh DDB after given intervall
 - bug fix: sage - newpage error fixed
+- bug fix: keep set infos in sage
 
 v3.2.2:
 - bug fix: save .lama file, when create sage file
