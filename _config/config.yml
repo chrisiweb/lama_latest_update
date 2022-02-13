@@ -599,7 +599,8 @@ dict_k2:
     "VE":
         - 'pg'
         - 'rh'
-        - 'tr'
+        - 'trg'
+        - 'tra'
         - 'dt'
         - 'av'
         - 'ave'
@@ -951,7 +952,8 @@ dict_unterkapitel:
     "te" : "Anwendungen in der Technik"
     "tgd" : "Tabellen und graphische Darstellungen"
     "tut" : "Teiler und Teilbarkeitsregeln"
-    "tr" : "Trapez"
+    "tra" : "Allgemeines Trapez"
+    "trg" : "Gleichschenkliges Trapez"
     "uew" : "Übetragen von Winkeln"
     "uf" : "Umformen von Formeln"
     "ug" : "Ungleichungen"
