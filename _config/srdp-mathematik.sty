@@ -10,7 +10,7 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}[1996/12/26]
-\ProvidesPackage{srdp-mathematik}[2022/01/02 v1.9.4 Standard-Schularbeitsformate]
+\ProvidesPackage{srdp-mathematik}[2022/03/04 v1.9.5 Standard-Schularbeitsformate]
 
 
 \usepackage{color}
@@ -115,13 +115,37 @@
 
 \ProcessOptions\relax
 
+
+\NewDocumentCommand{\variation}{ m m O{#1} O{#2} O{#1} O{#2} O{#1} O{#2} O{#1}}{%
+\ifthenelse{\theZufall=0}{#1}{%
+\ifthenelse{\theZufall=1}{#2}{%
+\ifthenelse{\theZufall=2}{#3}{%
+\ifthenelse{\theZufall=3}{#4}{%
+\ifthenelse{\theZufall=4}{#5}{%
+\ifthenelse{\theZufall=5}{#6}{%
+\ifthenelse{\theZufall=6}{#7}{%
+\ifthenelse{\theZufall=7}{#8}{%
+\ifthenelse{\theZufall=8}{#9}{#1}%
+}}}}}}}}}
+
+
 \newcommand{\antwort}[2][]{\ifthenelse{\theAntworten=1}{{\color[rgb]{1,0,0}#2}}{#1}}
 
 \newcommand{\info}[2][]{\ifthenelse{\theinfo=1}{
 {\color[rgb]{0,0,1}#2}
 }{#1}}
 
+\newif\ifswitch
+\let\switchon\switchtrue
+\let\switchoff\switchfalse
 
+\ifthenelse{\theAntworten=1}{\switchon}{}
+
+\def\antwortzeile #1\\{%
+\ifswitch%
+{\color[rgb]{1,0,0}#1}\\
+\fi%
+}
 
 \newcounter{A1}
 \newcounter{A2}
