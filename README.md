@@ -10,6 +10,15 @@ v4.0.0: [BETA]
 - new: define eps-quality
 - bugfix: edit typ2 examples in sage
 
+v3.4.0:
+- new: enable group-variations
+- bug fix: edit typ2 examples in sage
+- bug fix: use typ2 examples with no introducing text
+- bug fix: hide/show items in SAGE
+- bug fix: LaMA Cria KO-Checkbox not working
+- bug fix: save half points
+- bug fix: save & load .lama files
+
 v3.3.0:
 - new: show GK-Catalogue
 - new: different percentages of grades in LaMA and Cria
