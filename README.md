@@ -10,6 +10,14 @@ v4.0.0: [BETA]
 - new: define eps-quality
 - bugfix: edit typ2 examples in sage
 
+v3.4.1:
+- edit GUI from Sage
+- bug fix: enable/show page numbering
+- enable inital popup window
+- bug fix: loading when no internet connection
+- bug fix: settings file not complete
+
+
 v3.4.0:
 - new: enable group-variations
 - bug fix: edit typ2 examples in sage
