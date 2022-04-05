@@ -10,7 +10,7 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}[1996/12/26]
-\ProvidesPackage{srdp-mathematik}[2022/03/04 v1.9.5 Standard-Schularbeitsformate]
+\ProvidesPackage{srdp-mathematik}[2022/04/05 v1.9.6 Standard-Schularbeitsformate]
 
 
 \usepackage{color}
@@ -127,6 +127,18 @@
 \ifthenelse{\theZufall=7}{#8}{%
 \ifthenelse{\theZufall=8}{#9}{#1}%
 }}}}}}}}}
+
+
+\ExplSyntaxOn
+\NewDocumentCommand{\stringprocess}{ m m }
+{\egreg_string_process:nn{#1}{#2}}
+\cs_new_protected:Npn \egreg_string_process:nn#1#2
+{\tl_map_inline:nn{#2}{#1{##1}}}
+\ExplSyntaxOff
+
+\newcommand{\boxchar}[2]{\strut#2#1}
+\newcommand{\stretchstring}[2][\ \ ]{\stringprocess{\boxchar{#1}}{#2}}
+
 
 
 \newcommand{\antwort}[2][]{\ifthenelse{\theAntworten=1}{{\color[rgb]{1,0,0}#2}}{#1}}
