@@ -595,7 +595,7 @@ dict_k4_name:
     'RE' : 'Reelle Zahlen'
     'TE' : 'Terme'
     'BTE' : 'Bruchterme'
-    'GL' : 'Gleichungen und Ungleichungen'
+    'GU' : 'Gleichungen und Ungleichungen'
     'GSY' : 'Lineare Gleichungssysteme mit zwei Variablen'
     'FU' : 'Funktionen'
     'NAT' : 'Anwendungen in Naturwissenschaft und Technik'
@@ -624,7 +624,7 @@ dict_k4:
         - 'mdb'
         - 'dit'
         - 'bae'
-    "GL":
+    "GU":
         - 'lgm1'
         - 'lug'
         - 'fa' 
