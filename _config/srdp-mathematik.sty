@@ -10,7 +10,7 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}[1996/12/26]
-\ProvidesPackage{srdp-mathematik}[2022/08/24 v1.10.0 Standard-Schularbeitsformate]
+\ProvidesPackage{srdp-mathematik}[2022/09/11 v1.10.1 Standard-Schularbeitsformate]
 
 
 \usepackage{color}
@@ -200,7 +200,32 @@
 %
 %
 %
-%
+%%%%%%%%%%%%%%%%%%%%%%% UK FLAG ##################
+
+\newcommand{\flagUK}[1][0.0125]{\definecolor{ukred}{RGB}{200,16,46}
+\definecolor{ukwhite}{RGB}{255,255,255}
+\definecolor{ukblue}{RGB}{1,33,105}
+\begin{tikzpicture}[scale=#1] %Scale must be changed to make the flag fit on letter/A4 paper (scale=1 produces a 60 cm by 30 cm flag)
+\clip (-30,-15) rectangle (30,15); %Optional, crops the flag to the correct size
+\draw[-] (-30,-15)--(30,-15)--(30,15)--(-30,15)--cycle; %Optional, draws a border around the flag
+%Blue background:
+\fill[ukblue] (-30,-15)--(30,-15)--(30,15)--(-30,15)--cycle;
+%White upright cross:
+\fill[ukwhite] (5,15)--(5,5)--(30,5)--(30,-5)--(5,-5)--(5,-15)--(-5,-15)--(-5,-5)--(-30,-5)--(-30,5)--(-30,5)--(-5,5)--(-5,15)--cycle;
+%White St. Andrew's Cross:
+\fill[ukwhite] (-30,-15)--(-30,{-15+3/2*sqrt(5)})--({30-3*sqrt(5)},15)--(30,15)--(30,{15-3/2*sqrt(5)})--({-30+3*sqrt(5)},-15)--cycle; %Lower-left to upper-right
+\fill[ukwhite] (-30,15)--(-30,{15-3/2*sqrt(5)})--({30-3*sqrt(5)},-15)--(30,-15)--(30,{-15+3/2*sqrt(5)})--({-30+3*sqrt(5)},15)--cycle; %Upper-left to lower-right
+%Red upright Cross:
+\fill[ukred] (3,15)--(3,3)--(30,3)--(30,-3)--(3,-3)--(3,-15)--(-3,-15)--(-3,-3)--(-30,-3)--(-30,3)--(-30,3)--(-3,3)--(-3,15)--cycle;
+%Red St. Patrick's Cross:
+\fill[ukred] ({10-2*sqrt(5)},5)--(10,5)--(30,15)--({30-2*sqrt(5)},15)--cycle; %Upper-right diagonal
+\fill[ukred] (-10,5)--({-10-2*sqrt(5)},5)--(-30,{15-sqrt(5)})--(-30,15)--cycle; %Upper-left diagonal
+\fill[ukred] ({-10+2*sqrt(5)},-5)--(-10,-5)--(-30,-15)--({-30+2*sqrt(5)},-15)--cycle; %Lower-left diagonal
+\fill[ukred] (10,-5)--({10+2*sqrt(5)},-5)--(30,{-15+sqrt(5)})--(30,-15)--cycle; %Lower-right diagonal
+\end{tikzpicture}}
+
+%%Created by Senan Sekhon, December 2, 2020
+
 %%%%%%%%%%%%%%%%%%%%%%%  	BEISPIEL UMGEBUNG  %%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
