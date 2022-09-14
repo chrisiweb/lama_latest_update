@@ -1,13 +1,15 @@
 # LaMA - LaTeX Mathematik Assistent
-*Aktuelle Version: [v3.4.3]*
+*Aktuelle Version: [v4.0.0]*
 
 __LaMA ist ein Programm, das AHS-Mathematiklehrer·innen das systematische Abspeichern von Unterstufen-, Oberstufen-Typ1- und Oberstufen-Typ2-Aufgaben ermöglicht. LaMA erleichtert die Suche dieser Aufgaben sowie die Erstellung von Prüfungen, wie Schularbeiten, Grundkompetenzchecks, usw.__  
 
 ## CHANGELOG
-v4.0.0: [BETA]
+v4.0.0:
 - new: automatically creating worksheets
 - new: convert graphic-files to eps via drag&drop
 - new: define eps-quality
+- new: enable drag&drop with tasks
+- new: import task list
 - bug fix: edit typ2 examples in sage
 
 v3.4.3:
