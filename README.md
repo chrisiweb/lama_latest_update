@@ -6,6 +6,7 @@ __LaMA ist ein Programm, das AHS-Mathematiklehrer·innen das systematische Abspe
 ## CHANGELOG
 v4.1.3:
 - bug fix: bug fix: show group A/B in Sage, when chosen
+- bug fix: show AF when new task ist saved
 - new setting option: change search pdf output - newpage 
 
 v4.1.2:
