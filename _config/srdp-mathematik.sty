@@ -10,7 +10,7 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}[1996/12/26]
-\ProvidesPackage{srdp-mathematik}[2022/09/11 v1.10.1 Standard-Schularbeitsformate]
+\ProvidesPackage{srdp-mathematik}[2022/10/02 v1.10.2 Standard-Schularbeitsformate]
 
 
 \usepackage{color}
@@ -411,7 +411,7 @@ Erreichte Punkte &Gesamt&\multicolumn{2}{c}{Note}& \\
 &\multirow{2}{*}{\thepunkte} &&& \\}
 &&&& \\ \hline \hline
 \ifthenelse{\equal{#3}{ms}}{}{\scriptsize{Sehr gut}} & \ifthenelse{\equal{#3}{ms}}{}{\scriptsize{Gut}} & \scriptsize{Befriedigend} & \scriptsize{Gen\"ugend} & \scriptsize{Nicht gen\"ugend} \\
-\ifthenelse{\equal{#3}{ms}}{}{\scriptsize{\thepunkte ~ - \ifdim\gut pt=\gutgenau pt \gut\else\gutpluseins\fi}}& \ifthenelse{\equal{#3}{ms}}{}{\scriptsize{\ifdim\gut pt=\gutgenau pt \gutminuseins\else\gut\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~ - \ifdim\befriedigend pt=\befriedigendgenau pt \befriedigend\else\befriedigendpluseins\fi}} & \scriptsize{\ifdim\befriedigend pt=\befriedigendgenau pt \befriedigendminuseins\else\befriedigend\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~ - \ifdim\genuegend pt=\genuegendgenau pt \genuegend\else\genuegendpluseins\fi} & \scriptsize{\ifdim\genuegend pt=\genuegendgenau pt \genuegendminuseins\else\genuegend\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~ - \ifdim\nichtgenuegend pt=\nichtgenuegendgenau pt \nichtgenuegend\else\nichtgenuegendpluseins\fi} & \scriptsize{unter \ifdim\nichtgenuegend pt=\nichtgenuegendgenau pt \nichtgenuegend\else\nichtgenuegendpluseins\fi} \\ \hline
+\ifthenelse{\equal{#3}{ms}}{}{\scriptsize{\thepunkte\ ~-~ \ifdim\gut pt=\gutgenau pt \gut\else\gutpluseins\fi}}& \ifthenelse{\equal{#3}{ms}}{}{\scriptsize{\ifdim\gut pt=\gutgenau pt \gutminuseins\else\gut\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~-~ \ifdim\befriedigend pt=\befriedigendgenau pt \befriedigend\else\befriedigendpluseins\fi}} & \scriptsize{\ifdim\befriedigend pt=\befriedigendgenau pt \befriedigendminuseins\else\befriedigend\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~-~ \ifdim\genuegend pt=\genuegendgenau pt \genuegend\else\genuegendpluseins\fi} & \scriptsize{\ifdim\genuegend pt=\genuegendgenau pt \genuegendminuseins\else\genuegend\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~-~ \ifdim\nichtgenuegend pt=\nichtgenuegendgenau pt \nichtgenuegend\else\nichtgenuegendpluseins\fi} & \scriptsize{unter \ifdim\nichtgenuegend pt=\nichtgenuegendgenau pt \nichtgenuegend\else\nichtgenuegendpluseins\fi} \\ \hline
 \end{tabular}
 \end{center}\STautoround{}\normalsize}
 
@@ -429,36 +429,46 @@ Erreichte Punkte &Gesamt&\multicolumn{2}{c}{Note}& \\
 &\multirow{2}{*}{\ifthenelse{\equal{#1}{}}{\thepunkte}{#1}} &&& \\}
 &&&& \\ \hline \hline
 \scriptsize{Sehr gut} & \scriptsize{Gut} & \scriptsize{Befriedigend} & \scriptsize{Gen\"ugend} & \scriptsize{Nicht gen\"ugend} \\
-\scriptsize{\ifthenelse{\equal{#1}{}}{\thepunkte}{#1} ~ - #3}& \scriptsize{#4 ~ - #5} & \scriptsize{#6 ~ - #7} & \scriptsize{#8 ~ - #9} & \scriptsize{unter #9} \\ \hline
+\scriptsize{\ifthenelse{\equal{#1}{}}{\thepunkte\ }{#1} ~-~ #3}& \scriptsize{#4 ~-~ #5} & \scriptsize{#6 ~-~ #7} & \scriptsize{#8 ~-~ #9} & \scriptsize{unter #9} \\ \hline
 \end{tabular}
 \end{center}\normalsize}
 
 
 
-\NewDocumentCommand{\punkteverteilung}{ O{} O{} O{}  m m m m}{
+\NewDocumentCommand{\punkteverteilung}{ O{} m m m m}{
 \null\vfill
 \STautoround{3}\renewcommand{\arraystretch}{0}\tiny
 \begin{spreadtab}[\STsavecell\gutgenau{b2} \STsavecell\befriedigendgenau{c2} \STsavecell\genuegendgenau{d2} \STsavecell\nichtgenuegendgenau{e2} 
 \STsavecell\gut{b3}  \STsavecell\befriedigend{c3} \STsavecell\genuegend{d3} \STsavecell\nichtgenuegend{e3}  
 \STsavecell\gutpluseins{b4} \STsavecell\befriedigendpluseins{c4}  \STsavecell\genuegendpluseins{d4} \STsavecell\nichtgenuegendpluseins{e4} \STsavecell\gutminuseins{b5} \STsavecell\befriedigendminuseins{c5} \STsavecell\genuegendminuseins{d5} \STsavecell\nichtgenuegendminuseins{e5}]{{tabular}{ccccc}}
 	\SThidecol\thepunkte &\SThidecol 1 &\SThidecol2 &\SThidecol 3 &\SThidecol 4 \\ 
-	& a1*#4 &a1*#5 & a1*#6 & a1*#7 \\
-	&trunc(a1*#4,0) & trunc(a1*#5,0) &trunc(a1*#6,0) &trunc(a1*#7,0) \\
+	& a1*#2 &a1*#3 & a1*#4 & a1*#5 \\
+	&trunc(a1*#2,0) & trunc(a1*#3,0) &trunc(a1*#4,0) &trunc(a1*#5,0) \\
 	&b3+1 &c3+1 &d3+1 & e3+1\\
 	&b3-1 &c3-1 &d3-1 & e3-1\\
 \end{spreadtab}
 \footnotesize\renewcommand{\arraystretch}{1}
 \begin{center}
 \begin{tabular}{|C{3cm}C{3cm}C{3cm}C{3cm}C{3cm}|}\hline
-\ifthenelse{\equal{#3}{ms}}{}{\scriptsize{Sehr gut}} & \ifthenelse{\equal{#3}{ms}}{}{\scriptsize{Gut}} & \scriptsize{Befriedigend} & \scriptsize{Gen\"ugend} & \scriptsize{Nicht gen\"ugend} \\
-\ifthenelse{\equal{#3}{ms}}{}{\scriptsize{\thepunkte ~ - \ifdim\gut pt=\gutgenau pt \gut\else\gutpluseins\fi}}& \ifthenelse{\equal{#3}{ms}}{}{\scriptsize{\ifdim\gut pt=\gutgenau pt \gutminuseins\else\gut\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~ - \ifdim\befriedigend pt=\befriedigendgenau pt \befriedigend\else\befriedigendpluseins\fi}} & \scriptsize{\ifdim\befriedigend pt=\befriedigendgenau pt \befriedigendminuseins\else\befriedigend\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~ - \ifdim\genuegend pt=\genuegendgenau pt \genuegend\else\genuegendpluseins\fi} & \scriptsize{\ifdim\genuegend pt=\genuegendgenau pt \genuegendminuseins\else\genuegend\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~ - \ifdim\nichtgenuegend pt=\nichtgenuegendgenau pt \nichtgenuegend\else\nichtgenuegendpluseins\fi} & \scriptsize{unter \ifdim\nichtgenuegend pt=\nichtgenuegendgenau pt \nichtgenuegend\else\nichtgenuegendpluseins\fi} \\ \hline
+\scriptsize{Sehr gut} & \scriptsize{Gut} & \scriptsize{Befriedigend} & \scriptsize{Gen\"ugend} & \scriptsize{Nicht gen\"ugend} \\
+\scriptsize{\thepunkte\ ~-~ \ifdim\gut pt=\gutgenau pt \gut\else\gutpluseins\fi}& \scriptsize{\ifdim\gut pt=\gutgenau pt \gutminuseins\else\gut\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~-~ \ifdim\befriedigend pt=\befriedigendgenau pt \befriedigend\else\befriedigendpluseins\fi} & \scriptsize{\ifdim\befriedigend pt=\befriedigendgenau pt \befriedigendminuseins\else\befriedigend\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~-~ \ifdim\genuegend pt=\genuegendgenau pt \genuegend\else\genuegendpluseins\fi} & \scriptsize{\ifdim\genuegend pt=\genuegendgenau pt \genuegendminuseins\else\genuegend\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~-~ \ifdim\nichtgenuegend pt=\nichtgenuegendgenau pt \nichtgenuegend\else\nichtgenuegendpluseins\fi} & \scriptsize{unter \ifdim\nichtgenuegend pt=\nichtgenuegendgenau pt \nichtgenuegend\else\nichtgenuegendpluseins\fi} \\ \hline
 \end{tabular}
 \end{center}\STautoround{}\normalsize}
-% for legacy reason
-\newcommand{\notenschluesselop}[5][1]{\notenschluessel[#1]{#2}{#3}{#4}{#5}} 
-%%%%%%%%%%%%%%%%%
 
-%
+
+
+\NewDocumentCommand{\individualpunkteverteilung}{m m m m m m m}{
+\null\vfill
+\footnotesize\renewcommand{\arraystretch}{1}
+\begin{center}
+\begin{tabular}{|C{3cm}C{3cm}C{3cm}C{3cm}C{3cm}|}\hline
+\scriptsize{Sehr gut} & \scriptsize{Gut} & \scriptsize{Befriedigend} & \scriptsize{Gen\"ugend} & \scriptsize{Nicht gen\"ugend} \\
+\scriptsize{\thepunkte\ ~-~ #1}& \scriptsize{#2 ~-~ #3} & \scriptsize{#4 ~-~ #5} & \scriptsize{#6 ~-~ #7} & \scriptsize{unter #7} \\ \hline
+\end{tabular}
+\end{center}\normalsize}
+
+
+
 %%%%%%%%%%%%%%%%%% GAP DEFINITION
 %
 %
@@ -537,9 +547,9 @@ title1/.initial=,
 \newcounter{teilzwei}
 
 
-\newcommand{\beurteilung}[5]{
+\newcommand{\beurteilung}[6][]{
 \bgroup
-\jeroen@set@keys{#5}%
+\jeroen@set@keys{#6}%
 \setcounter{teileins}{\jeroen@get{T1}}%
 \setcounter{teilzwei}{\jeroen@get{T2}}%
 \FPeval{total}{clip(\jeroen@get{T1}+\jeroen@get{T2})}%
@@ -556,80 +566,31 @@ Teil 2  &\jeroen@get{T2} &\\\hline
 Beurteilung: \rule{10.5cm}{0.4pt}
 \end{center}
 
-\defgesamtpunkte{\total}\punkteverteilung[1/2]{#1}{#2}{#3}{#4}\defgesamtpunkte{0}
+\defgesamtpunkte{\total}\punkteverteilung[#1]{#2}{#3}{#4}{#5}\defgesamtpunkte{0}
 \egroup
 }
 
-\newcommand{\beurteilungsraster}[5]{
+
+\newcommand{\individualbeurteilung}[8]{
 \bgroup
-  \jeroen@set@keys{#5}
-\setcounter{teileins}{\jeroen@get{T1}}
-\setcounter{ausgleichspkte}{\jeroen@get{AP}}
-\setcounter{teilzwei}{\jeroen@get{T2}}
-\STautoround{0}
-\begin{spreadtab}[\STsavecell{\positiv}{b1} \STsavecell{\gesamtpunkte}{c1}]{{tabular}{ccc}}
- \SThiderow &\theteileins/3*2 & \theteileins+\theausgleichspkte+\theteilzwei \\
-\end{spreadtab}
+\jeroen@set@keys{#8}%
+\setcounter{teileins}{\jeroen@get{T1}}%
+\setcounter{teilzwei}{\jeroen@get{T2}}%
+\FPeval{total}{clip(\jeroen@get{T1}+\jeroen@get{T2})}%
 
-
-\small
-Die Schularbeit besteht aus Teil 1 (Grundkompetenzen) und Teil 2 (vernetzte und erweiterte Grundkompetenzen). In Teil 1 und Teil 2 sind jeweils \jeroen@get{T1} Punkte zu erreichen. \jeroen@get{AP} Punkte aus Teil 2 k\"onnen zum Ausgleich fehlender Grundkompetenzpunkte aus Teil 1 herangezogen werden. Diese sind in der Angabe mit \fbox{A} gekennzeichnet. 
-
-\tiny
-\STautoround{0}
-\begin{spreadtab}[\STsavecell\brzweigrenze{f1}  \STsavecell\gut{b2} \STsavecell\befriedigend{c2}  \STsavecell{\genuegend}{d2} \STsavecell{\nichtgenuegend}{e2} \STsavecell\brzweibefriedigend{f2} \STsavecell{\gutminuseins}{b3}  \STsavecell{\befriedigendminuseins}{c3} \STsavecell{\genuegendminuseins}{d3} \STsavecell\brzweigrenzeminuseins{e3} \STsavecell\brzweibefriedigendminuseins{f3}]{{tabular}{cccccc}}
-\SThidecol \gesamtpunkte & \SThidecol 1 &\SThidecol 2 & \SThidecol 3 &\SThidecol 4 & \SThidecol \gesamtpunkte*0.75\\ % \SThidecol 
-&a1*#1 &a1*#2 &a1*#3 &a1*#4 & \gesamtpunkte*0.6\\
-& b2-1 &c2-1 &d2-1 & f1-1 & f2-1\\ %\SThiderow
-\end{spreadtab}
-\small
-
-\textbf{Zwei Beurteilungswege}
-
-\begin{enumerate}[1)]
-	\item Wenn mindestens \positiv~Punkte aus Teil 1, allenfalls unter Einbeziehung der Ausgleichspunkte aus \mbox{Teil 2} erreicht werden, gilt folgender Beurteilungsschlüssel:\vspace{0.3cm}
-
-\footnotesize
-\begin{tabular}{C{2.8cm}C{2.8cm}C{2.8cm}C{2.8cm}C{2.8cm}}
-\scriptsize{Sehr gut} & \scriptsize{Gut} & \scriptsize{Befriedigend} & \scriptsize{Gen\"ugend} & \scriptsize{Nicht gen\"ugend} \\
-\scriptsize{\gesamtpunkte ~-~ \gut} & \scriptsize{\gutminuseins,5 ~-~ \befriedigend} & \scriptsize{\befriedigendminuseins,5 ~-~ \genuegend} & \scriptsize{\genuegendminuseins,5 ~-~ \nichtgenuegend} & \scriptsize{unter \nichtgenuegend} \\
-\end{tabular}
-\STautoround{}\vspace{0.3cm}
-
-\small
-\item Wenn weniger als \positiv\ Punkte aus Teil 1, allenfalls unter Einbeziehung der Ausgleichspunkte aus \mbox{Teil 2} erreicht werden, dann kann auf diesem Weg ein \glqq Gen\"ugend\grqq\ oder \glqq Befriedigend\grqq\ erreicht werden: \vspace{0.3cm}
-
-\footnotesize
-\begin{tabular}{C{2.8cm}C{2.8cm}}
-\scriptsize{Befriedigend} & \scriptsize{Gen\"ugend} \\
-\scriptsize{\brzweigrenzeminuseins,5 ~-~ \brzweibefriedigend} & \scriptsize{\brzweibefriedigendminuseins,5 ~-~\genuegend}\\
-\end{tabular}
-\STautoround{} \vspace{0.3cm}
-
-\small
-Ab \brzweigrenze\ erreichten Punkten gilt der unter 1) angeführte Beurteilungsschlüssel.
-
-Die Arbeit wird mit \glqq Nicht genügend\grqq\ beurteilt, wenn im Teil 1 unter Berücksichtigung der \jeroen@get{AP} Ausgleichspunkte aus Teil 2 weniger als \nichtgenuegend\ Punkte und insgesamt weniger als \genuegend\ Punkte erreicht wurden. 
-
-\end{enumerate} \leer
-\vfil
-
-\renewcommand{\arraystretch}{1.5}
 \begin{center}
+\renewcommand{\arraystretch}{1.5}
 \begin{tabular}{p{5cm}p{4cm}l}
 &Punkte&davon erreicht\\ \hline
-Teil 1&\jeroen@get{T1}&\\ \hline
-Teil 2: Ausgleichspunkte  & \jeroen@get{AP} &\\ \hline
-&Zwischensumme &\\ \hline
-Teil 2: sonstige Punkte  &\jeroen@get{T2} &\\ \hline
-& $\Sigma=\gesamtpunkte$ & \\ \hline
-Beurteilungsweg & \fbox{1} oder \fbox{2} \\ \hline
-\end{tabular}
-\vspace{1cm}
+Teil 1&\jeroen@get{T1}&\\\hline
+Teil 2  &\jeroen@get{T2} &\\\hline
+& $\Sigma= \total$ & \\\hline
+\end{tabular}\vspace{1.5cm}
 
-Beurteilung: \rule{8cm}{0.4pt}
+Beurteilung: \rule{10.5cm}{0.4pt}
 \end{center}
-\renewcommand{\arraystretch}{1}
+
+\defgesamtpunkte{\total}\individualpunkteverteilung{#1}{#2}{#3}{#4}{#5}{#6}{#7}\defgesamtpunkte{0}
 \egroup
 }
 
@@ -1099,6 +1060,92 @@ Complete the following sentence by putting a cross next to one of the given poss
 \end{tabu}\leer
 
   \egroup}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% OBSOLETE COMMANDS -- FOR LEGACY REASONS %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\notenschluesselop}[5][1]{\notenschluessel[#1]{#2}{#3}{#4}{#5}} 
+%%%%%%%%%%%%%%%%%
+
+\newcommand{\beurteilungsraster}[5]{
+\bgroup
+  \jeroen@set@keys{#5}
+\setcounter{teileins}{\jeroen@get{T1}}
+\setcounter{ausgleichspkte}{\jeroen@get{AP}}
+\setcounter{teilzwei}{\jeroen@get{T2}}
+\STautoround{0}
+\begin{spreadtab}[\STsavecell{\positiv}{b1} \STsavecell{\gesamtpunkte}{c1}]{{tabular}{ccc}}
+ \SThiderow &\theteileins/3*2 & \theteileins+\theausgleichspkte+\theteilzwei \\
+\end{spreadtab}
+
+
+\small
+Die Schularbeit besteht aus Teil 1 (Grundkompetenzen) und Teil 2 (vernetzte und erweiterte Grundkompetenzen). In Teil 1 und Teil 2 sind jeweils \jeroen@get{T1} Punkte zu erreichen. \jeroen@get{AP} Punkte aus Teil 2 k\"onnen zum Ausgleich fehlender Grundkompetenzpunkte aus Teil 1 herangezogen werden. Diese sind in der Angabe mit \fbox{A} gekennzeichnet. 
+
+\tiny
+\STautoround{0}
+\begin{spreadtab}[\STsavecell\brzweigrenze{f1}  \STsavecell\gut{b2} \STsavecell\befriedigend{c2}  \STsavecell{\genuegend}{d2} \STsavecell{\nichtgenuegend}{e2} \STsavecell\brzweibefriedigend{f2} \STsavecell{\gutminuseins}{b3}  \STsavecell{\befriedigendminuseins}{c3} \STsavecell{\genuegendminuseins}{d3} \STsavecell\brzweigrenzeminuseins{e3} \STsavecell\brzweibefriedigendminuseins{f3}]{{tabular}{cccccc}}
+\SThidecol \gesamtpunkte & \SThidecol 1 &\SThidecol 2 & \SThidecol 3 &\SThidecol 4 & \SThidecol \gesamtpunkte*0.75\\ % \SThidecol 
+&a1*#1 &a1*#2 &a1*#3 &a1*#4 & \gesamtpunkte*0.6\\
+& b2-1 &c2-1 &d2-1 & f1-1 & f2-1\\ %\SThiderow
+\end{spreadtab}
+\small
+
+\textbf{Zwei Beurteilungswege}
+
+\begin{enumerate}[1)]
+	\item Wenn mindestens \positiv~Punkte aus Teil 1, allenfalls unter Einbeziehung der Ausgleichspunkte aus \mbox{Teil 2} erreicht werden, gilt folgender Beurteilungsschlüssel:\vspace{0.3cm}
+
+\footnotesize
+\begin{tabular}{C{2.8cm}C{2.8cm}C{2.8cm}C{2.8cm}C{2.8cm}}
+\scriptsize{Sehr gut} & \scriptsize{Gut} & \scriptsize{Befriedigend} & \scriptsize{Gen\"ugend} & \scriptsize{Nicht gen\"ugend} \\
+\scriptsize{\gesamtpunkte ~-~ \gut} & \scriptsize{\gutminuseins,5 ~-~ \befriedigend} & \scriptsize{\befriedigendminuseins,5 ~-~ \genuegend} & \scriptsize{\genuegendminuseins,5 ~-~ \nichtgenuegend} & \scriptsize{unter \nichtgenuegend} \\
+\end{tabular}
+\STautoround{}\vspace{0.3cm}
+
+\small
+\item Wenn weniger als \positiv\ Punkte aus Teil 1, allenfalls unter Einbeziehung der Ausgleichspunkte aus \mbox{Teil 2} erreicht werden, dann kann auf diesem Weg ein \glqq Gen\"ugend\grqq\ oder \glqq Befriedigend\grqq\ erreicht werden: \vspace{0.3cm}
+
+\footnotesize
+\begin{tabular}{C{2.8cm}C{2.8cm}}
+\scriptsize{Befriedigend} & \scriptsize{Gen\"ugend} \\
+\scriptsize{\brzweigrenzeminuseins,5 ~-~ \brzweibefriedigend} & \scriptsize{\brzweibefriedigendminuseins,5 ~-~\genuegend}\\
+\end{tabular}
+\STautoround{} \vspace{0.3cm}
+
+\small
+Ab \brzweigrenze\ erreichten Punkten gilt der unter 1) angeführte Beurteilungsschlüssel.
+
+Die Arbeit wird mit \glqq Nicht genügend\grqq\ beurteilt, wenn im Teil 1 unter Berücksichtigung der \jeroen@get{AP} Ausgleichspunkte aus Teil 2 weniger als \nichtgenuegend\ Punkte und insgesamt weniger als \genuegend\ Punkte erreicht wurden. 
+
+\end{enumerate} \leer
+\vfil
+
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+\begin{tabular}{p{5cm}p{4cm}l}
+&Punkte&davon erreicht\\ \hline
+Teil 1&\jeroen@get{T1}&\\ \hline
+Teil 2: Ausgleichspunkte  & \jeroen@get{AP} &\\ \hline
+&Zwischensumme &\\ \hline
+Teil 2: sonstige Punkte  &\jeroen@get{T2} &\\ \hline
+& $\Sigma=\gesamtpunkte$ & \\ \hline
+Beurteilungsweg & \fbox{1} oder \fbox{2} \\ \hline
+\end{tabular}
+\vspace{1cm}
+
+Beurteilung: \rule{8cm}{0.4pt}
+\end{center}
+\renewcommand{\arraystretch}{1}
+\egroup
+}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%% Zusatz: änderung für chemie-package %%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%
