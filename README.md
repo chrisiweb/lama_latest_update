@@ -5,7 +5,7 @@ __LaMA ist ein Programm, das AHS-Mathematiklehrer·innen das systematische Abspe
 
 ## CHANGELOG
 v4.1.4: [BETA]
-- bug fix: error when indivdual changes is opened in user mode
+- bug fix: error when typ2 indivdual edit is opened in user mode
 
 v4.1.3:
 - bug fix: show group A/B in Sage, when chosen
