@@ -6,6 +6,7 @@ __LaMA ist ein Programm, das AHS-Mathematiklehrer·innen das systematische Abspe
 ## CHANGELOG
 v4.1.5: [BETA]
 - enable hide/show date in custom sage
+- enable hide/show name
 - bug fix: wrong initial subchapters in cria creator
 - bug fix: error, when latex distribution not installed
 - bug fix: refresh_ddb, when srdp-package is updated
