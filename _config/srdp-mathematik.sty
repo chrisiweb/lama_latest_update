@@ -10,7 +10,7 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}[1996/12/26]
-\ProvidesPackage{srdp-mathematik}[2022/11/09 v1.10.4 Standard-Schularbeitsformate]
+\ProvidesPackage{srdp-mathematik}[2022/12/16 v1.11.0 Standard-Schularbeitsformate]
 
 
 \usepackage{color}
@@ -341,7 +341,21 @@
 %
 %
 %
+%%%%%%%%%%%%%%%%% Parallel-Linien
 
+\newcommand{\parallellines}[3][0]{%
+\FPset\length{0.4}\FPset\seperation{0.1}\FPset\Px{#2}\FPset\Py{#3}\FPset\rotation{#1}%
+\FPset\convertdegree{180}\FPdiv\radians\rotation\convertdegree\FPmul\rotation\radians\FPpi%
+\FPsin\sinus\rotation\FPcos\cosinus\rotation%
+\FPmul\Qcosx\length\cosinus\FPmul\Qsiny\length\sinus%
+\FPmul\Rcosx\seperation\cosinus\FPmul\Rsiny\seperation\sinus%
+\FPadd\Qx\Px\Qcosx\FPadd\Qy\Py\Qsiny%
+\FPsub\Rx\Px\Rsiny\FPadd\Ry\Py\Rcosx%
+\FPmul\Scosx\length\cosinus\FPmul\Ssiny\length\sinus%
+\FPadd\Sx\Rx\Scosx\FPadd\Sy\Ry\Ssiny%
+\psline[linewidth=0.8pt](\Px,\Py)(\Qx,\Qy)%
+\psline[linewidth=0.8pt](\Rx,\Ry)(\Sx,\Sy)%
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%% Vektorendefinition
 
