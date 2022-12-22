@@ -7,6 +7,7 @@ __LaMA ist ein Programm, das AHS-Mathematiklehrer·innen das systematische Abspe
 v4.2.0: [BETA]
 - new: create worksheet for binomial expansions in Worksheet Wizard
 - bug fix: correct chosen_program, when changed
+- bug fix: edit local saved examples
 
 v4.1.5:
 - enable hide/show date in custom sage
