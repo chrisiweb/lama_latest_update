@@ -561,6 +561,7 @@ dict_k3:
         - 'pw'
         
     "FL":
+        - 'wv'
         - 'pg'
         - 'dr'
         - 'drq'
@@ -574,8 +575,8 @@ dict_k3:
         - 'paa'
     
     "LP":
-        - 'sdp'
         - 'qw'
+        - 'sdp'
         - 'rq'
         - 'gd'
 
@@ -852,6 +853,7 @@ dict_unterkapitel:
     "wm" : "Bezeichnungen von Winkeln und Winkelmaße"
     "ws" : "Winkelsymmetrale"
     "wsw" : "Winkel-Seiten-Winkel-Satz"
+    "wv" : "Wiederholung der Eigenschaften von Vierecken"
     "wz" : "Wachstums- und Zerfallsprozesse"
     "zam" : "Zahlenmengen"
     "zm" : "Zeichnen im gegebenen Maßstab"
