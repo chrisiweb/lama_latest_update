@@ -610,10 +610,10 @@ dict_k4:
     "RE":
         - 'qw'
         - 'rqw'
-        - 'dqw'
         - 'kw'
         - 'zam'
-        - 'pwu'
+        - 'iv'
+        - 'dqw'
     "TE":
         - 'rte'
         - 'hzt'
@@ -763,6 +763,7 @@ dict_unterkapitel:
     "igd" : "Interpretieren von graphischen Darstellungen"
     "ikm" : "Inkreismittelpunkt"
     "ilf" : "Inhomogene lineare Funktionen"
+    "iv" : "Intervalle"
     "jz" : "Jahreszinsen"
     "ke" : "Klasseneinteilung"
     "kest" : "Jahreszinsen mit Kapitalertragsteuer"
