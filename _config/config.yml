@@ -615,7 +615,9 @@ dict_k4:
         - 'iv'
         - 'dqw'
     "TE":
+        - 'et'
         - 'rte'
+        - 'bf'
         - 'hzt'
     "BTE":
         - 'ef'
@@ -729,6 +731,7 @@ dict_unterkapitel:
     "ek" : "Erweitern und Kürzen"
     "eko" : "Eigenschaften und Konstruktion"
     "es" : "Eigenschaften, Schrägriss"
+    "et" : "Einführung und Termstruktur"
     "ew" : "Einführung: Winkel"
     "enk" : "Erweiterung durch negative Koordinaten"
     "fa" : "Fehlerabschätzung"
