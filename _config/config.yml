@@ -621,11 +621,11 @@ dict_k4:
         - 'hzt'
     "BTE":
         - 'ef'
-        - 'kub'
+        - 'keb'
         - 'asg'
         - 'asu'
-        - 'mdb'
-        - 'dit'
+        - 'mbt'
+        - 'dbt'
         - 'bae'
     "GU":
         - 'lgm1'
@@ -696,8 +696,8 @@ dict_unterkapitel:
     "arq" : "Anwendung im Rechteck und Quadrat"
     "as" : "Addieren und Subtrahieren"
     "atr" : "Anwendung im Trapez"
-    "asg" : "Addieren und Subtrahieren mit gleichen Nenner"
-    "asu" : "Addieren und Subtrahieren mit unterschiedlichen Nenner"
+    "asg" : "Addieren und Subtrahieren mit gleichem Nenner"
+    "asu" : "Addieren und Subtrahieren mit unterschiedlichem Nenner"
     "av" : "Allgemeines Viereck"
     "ave" : "Allgemeines Vieleck"
     "avv" : "Allgemeines Viereck und Vieleck"
@@ -710,11 +710,11 @@ dict_unterkapitel:
     "bw" : "Beweise von Satz des Pythagoras"
     "ce" : "Charakteristische Eigenschaften linearer Funktionen"
     "ch" : "Mischaufgaben und chemische Reaktionen"
+    "dbt" : "Dividieren von Bruchtermen"
     "dg" : "Direkt proportionale Größen"
     "di" : "Dividieren"
     "dipg" : "Direkt und indirekt proportionale Größen"
     "dk" : "Drehkegel"
-    "dit" : "Dividieren durch Terme"
     "dqw" : "Graphische Darstellung von Quadratwurzeln"
     "dr" : "Dreieck"
     "drq" : "Deltoid, Rhombus, Quadrat"
@@ -769,6 +769,7 @@ dict_unterkapitel:
     "iv" : "Intervalle"
     "jz" : "Jahreszinsen"
     "ke" : "Klasseneinteilung"
+    "keb" : "Kürzen und Erweitern von Bruchtermen"
     "kest" : "Jahreszinsen mit Kapitalertragsteuer"
     "kgv" : "Kleinstes gemeinsames Vielfaches"
     "kh" : "Kathetensatz und Höhensatz"
@@ -776,7 +777,6 @@ dict_unterkapitel:
     "ks" : "Koordinatensystem"
     "kt" : "Kreuztabellen"
     "ku" : "Kugel"
-    "kub" : "Kürzen von Bruchtermen"
     "kw" : "Kubikwurzeln"
     "lbkg" : "Lagebeziehungen von Kreis und Gerade"
     "lbkk" : "Lagebeziehungen von zwei Kreisen"
@@ -787,11 +787,11 @@ dict_unterkapitel:
     "lgm2" : "Eine lineare Gleichung mit zwei Variablen"
     "lkb" : "Länge des Kreisbogens"
     "lug" : "Lösen von Ungleichungen"
-    "ma" : "Massangaben – Geld, Laengen, Masse, usw."
+    "ma" : "Massangaben - Geld, Laengen, Masse, usw."
     "mad" : "Masse und Dichte"
     "mast" : "Maßstab"
+    "mbt" : "Multiplizieren von Bruchtermen"
     "md" : "Multiplizieren und Dividieren"
-    "mdb" : "Multiplizieren und Dividieren mit Bruchtermen"
     "mem" : "Median und Modus"
     "mm" : "Mittelwerte von Mittelwerten"
     "mu" : "Multiplizieren"
