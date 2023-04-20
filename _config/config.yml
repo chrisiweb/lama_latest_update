@@ -629,8 +629,8 @@ dict_k4:
         - 'bae'
     "GU":
         - 'lgm1'
-        - 'lug'
-        - 'fa' 
+        - 'bgl'
+        - 'lug' 
     "GSY":
         - 'lgm2'
         - 'glv'
@@ -706,6 +706,7 @@ dict_unterkapitel:
     "ba" : "Bewegungsaufgaben"
     "bae" : "Bruchterme aufstellen und einsetzen"
     "bf" : "Binomische Formeln"
+    "bgl" : "Bruchgleichungen"
     "bqw" : "Bezeichnung bei Quader und Würfel"
     "bw" : "Beweise von Satz des Pythagoras"
     "ce" : "Charakteristische Eigenschaften linearer Funktionen"
@@ -734,7 +735,6 @@ dict_unterkapitel:
     "et" : "Einführung und Termstruktur"
     "ew" : "Einführung: Winkel"
     "enk" : "Erweiterung durch negative Koordinaten"
-    "fa" : "Fehlerabschätzung"
     "fg" : "Aufstellen von Formeln und Gleichungen"
     "fk" : "Flächeninhalt eines Kreises"
     "fks" : "Flächeninhalt eines Kreissektors"
