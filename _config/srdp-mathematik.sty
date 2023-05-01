@@ -10,7 +10,7 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}[1996/12/26]
-\ProvidesPackage{srdp-mathematik}[2022/12/16 v1.11.0 Standard-Schularbeitsformate]
+\ProvidesPackage{srdp-mathematik}[2023/05/01 v1.12.0 Standard-Schularbeitsformate]
 
 
 \usepackage{color}
@@ -86,6 +86,7 @@
 \newcounter{info}
 \newcounter{marker}
 \DeclareOption{solution_on}{\setcounter{Antworten}{1}}
+\DeclareOption{solution_minimal}{\setcounter{Antworten}{1}}
 \DeclareOption{solution_off}{\setcounter{Antworten}{0}}
 \DeclareOption{info_on}{\setcounter{info}{1}}
 \DeclareOption{info_off}{\setcounter{info}{0}}
@@ -229,21 +230,28 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcounter{number}
+\newcounter{counterhalfpoints}
 \newcommand*\rfrac[2]{{}^{#1}\!/_{#2}}
 
 \makeatletter
+
 \def\addifisinteger#1{%
   \sbox\z@{\@tempcnta=0#1\relax}%
   \expandafter\ifdim\wd\z@>\z@\relax
-  {}\else
+  \IfEndWith{#1}{.5}{\addtocounter{punkte}{\fpeval{trunc(#1,0)}}\stepcounter{counterhalfpoints}}{\PackageError{srdp-mathemathik}{Points must be integers or ".5"}{Only numbers are allowed as input. Decimal point must be "." not ","}}\else
   \addtocounter{punkte}{#1}\fi}
-\makeatother
 
-\makeatletter
 \def\checkifinteger#1#2{%
   \sbox\z@{\@tempcnta=0#1\relax}%
   \expandafter\ifdim\wd\z@>\z@\relax
   \scriptsize$\rfrac{#2}{2}$\small\else#1\fi}
+
+\def\dottocomma#1{%
+\sbox\z@{\@tempcnta=0#1\relax}%
+\expandafter\ifdim\wd\z@>\z@\relax
+\begingroup\def\@tempa##1.##2\@nil{##1,\ifx\relax##2\relax\else##2\fi}%
+\@tempa#1\@nil
+\endgroup\else#1\fi}
 \makeatother
 
 \NewEnviron{beispiel}[2][\unskip]{\FPeval{\halbepunkte}{clip(#2/2)}%
@@ -255,7 +263,7 @@
 	
 	
 	\end{minipage} 
-	\begin{minipage}[t]{0.11\textwidth} \raggedleft \small{\_\_\_/\ifthenelse{\equal{#1}{\string 1/2}}{\checkifinteger{\halbepunkte}{#2}/}{\ifthenelse{\equal{#1}{\string 1}}{1/}{}}#2\addifisinteger{#2}\\
+	\begin{minipage}[t]{0.11\textwidth} \raggedleft \small{\_\_\_/\ifthenelse{\equal{#1}{\string 1/2}}{\checkifinteger{\halbepunkte}{#2}/}{\ifthenelse{\equal{#1}{\string 1}}{1/}{}}\dottocomma{#2}\addifisinteger{#2}\\
 		\ifthenelse{\equal{#1}{\string 1/2}}{}{\antwort{\footnotesize #1 \normalsize}}}
 	\end{minipage}
 	\vspace{\baselineskip}
@@ -306,9 +314,9 @@
     \rightmargin.12\textwidth
     \def\makelabel##1{\stepcounter{number}%
     \hss\llap{\thenumber.}%
-    \addtocounter{punkte}{##1}%
-    \rlap{\kern\dimexpr\textwidth-\leftmargin
-    \llap{\small\_\_\_/##1}}}}%
+    \addifisinteger{##1}%
+    \rlap{\kern\dimexpr\textwidth-\leftmargin+6pt
+    \llap{\small\_\_\_/\dottocomma{##1}}}}}%
 }
 {\endlist}
 
@@ -400,14 +408,14 @@
 %%%%%%%%%%%% NOTENSCHLUESSEL  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % 
-
-\NewDocumentCommand{\notenschluessel}{ O{} O{} O{}  m m m m}{
+\newcounter{temporarygesamtpunkte}
+\NewDocumentCommand{\notenschluessel}{ O{} O{} O{}  m m m m}{\ifthenelse{\isodd{\thecounterhalfpoints}}{\setcounter{temporarygesamtpunkte}{\numexpr\thepunkte+(\thecounterhalfpoints-1)/2\relax}}{\setcounter{temporarygesamtpunkte}{\numexpr\thepunkte+\thecounterhalfpoints/2\relax}}%
 \null\vfill
 \STautoround{3}\renewcommand{\arraystretch}{0}\tiny
 \begin{spreadtab}[\STsavecell\gutgenau{b2} \STsavecell\befriedigendgenau{c2} \STsavecell\genuegendgenau{d2} \STsavecell\nichtgenuegendgenau{e2} 
 \STsavecell\gut{b3}  \STsavecell\befriedigend{c3} \STsavecell\genuegend{d3} \STsavecell\nichtgenuegend{e3}  
 \STsavecell\gutpluseins{b4} \STsavecell\befriedigendpluseins{c4}  \STsavecell\genuegendpluseins{d4} \STsavecell\nichtgenuegendpluseins{e4} \STsavecell\gutminuseins{b5} \STsavecell\befriedigendminuseins{c5} \STsavecell\genuegendminuseins{d5} \STsavecell\nichtgenuegendminuseins{e5}]{{tabular}{ccccc}}
-	\SThidecol\thepunkte &\SThidecol 1 &\SThidecol2 &\SThidecol 3 &\SThidecol 4 \\ 
+	\SThidecol \thetemporarygesamtpunkte &\SThidecol 1 &\SThidecol2 &\SThidecol 3 &\SThidecol 4 \\ 
 	& a1*#4 &a1*#5 & a1*#6 & a1*#7 \\
 	&trunc(a1*#4,0) & trunc(a1*#5,0) &trunc(a1*#6,0) &trunc(a1*#7,0) \\
 	&b3+1 &c3+1 &d3+1 & e3+1\\
@@ -418,31 +426,31 @@
 \begin{tabular}{|C{3cm}C{3cm}C{3cm}C{3cm}C{3cm}|} \hline
 \ifthenelse{\equal{#2}{prozent}}{%
 Erreichte Punkte & Prozent & Gesamt & \multicolumn{2}{c|}{Note} \\
-&& \multirow{2}{*}{\thepunkte} && \\%
+&& \multirow{2}{*}{\ifthenelse{\isodd{\thecounterhalfpoints}}{\thetemporarygesamtpunkte ,5}{\thetemporarygesamtpunkte}} && \\%
 }{%
 Erreichte Punkte &Gesamt&\multicolumn{2}{c}{Note}& \\
-&\multirow{2}{*}{\thepunkte} &&& \\}
+&\multirow{2}{*}{\ifthenelse{\isodd{\thecounterhalfpoints}}{\thetemporarygesamtpunkte ,5}{\thetemporarygesamtpunkte}} &&& \\}
 &&&& \\ \hline \hline
 \ifthenelse{\equal{#3}{ms}}{}{\scriptsize{Sehr gut}} & \ifthenelse{\equal{#3}{ms}}{}{\scriptsize{Gut}} & \scriptsize{Befriedigend} & \scriptsize{Gen\"ugend} & \scriptsize{Nicht gen\"ugend} \\
-\ifthenelse{\equal{#3}{ms}}{}{\scriptsize{\thepunkte\ ~-~ \ifdim\gut pt=\gutgenau pt \gut\else\gutpluseins\fi}}& \ifthenelse{\equal{#3}{ms}}{}{\scriptsize{\ifdim\gut pt=\gutgenau pt \gutminuseins\else\gut\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~-~ \ifdim\befriedigend pt=\befriedigendgenau pt \befriedigend\else\befriedigendpluseins\fi}} & \scriptsize{\ifdim\befriedigend pt=\befriedigendgenau pt \befriedigendminuseins\else\befriedigend\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~-~ \ifdim\genuegend pt=\genuegendgenau pt \genuegend\else\genuegendpluseins\fi} & \scriptsize{\ifdim\genuegend pt=\genuegendgenau pt \genuegendminuseins\else\genuegend\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~-~ \ifdim\nichtgenuegend pt=\nichtgenuegendgenau pt \nichtgenuegend\else\nichtgenuegendpluseins\fi} & \scriptsize{unter \ifdim\nichtgenuegend pt=\nichtgenuegendgenau pt \nichtgenuegend\else\nichtgenuegendpluseins\fi} \\ \hline
+\ifthenelse{\equal{#3}{ms}}{}{\scriptsize{\ifthenelse{\isodd{\thecounterhalfpoints}}{\thetemporarygesamtpunkte ,5}{\thetemporarygesamtpunkte} ~-~ \ifdim\gut pt=\gutgenau pt \gut\else\gutpluseins\fi}}& \ifthenelse{\equal{#3}{ms}}{}{\scriptsize{\ifdim\gut pt=\gutgenau pt \gutminuseins\else\gut\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~-~ \ifdim\befriedigend pt=\befriedigendgenau pt \befriedigend\else\befriedigendpluseins\fi}} & \scriptsize{\ifdim\befriedigend pt=\befriedigendgenau pt \befriedigendminuseins\else\befriedigend\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~-~ \ifdim\genuegend pt=\genuegendgenau pt \genuegend\else\genuegendpluseins\fi} & \scriptsize{\ifdim\genuegend pt=\genuegendgenau pt \genuegendminuseins\else\genuegend\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~-~ \ifdim\nichtgenuegend pt=\nichtgenuegendgenau pt \nichtgenuegend\else\nichtgenuegendpluseins\fi} & \scriptsize{unter \ifdim\nichtgenuegend pt=\nichtgenuegendgenau pt \nichtgenuegend\else\nichtgenuegendpluseins\fi} \\ \hline
 \end{tabular}
 \end{center}\STautoround{}\normalsize}
 
 
-\NewDocumentCommand{\individualnotenschluessel}{ O{} O{} m m m m m m m}{
+\NewDocumentCommand{\individualnotenschluessel}{ O{} O{} m m m m m m m}{\ifthenelse{\isodd{\thecounterhalfpoints}}{\setcounter{temporarygesamtpunkte}{\numexpr\thepunkte+(\thecounterhalfpoints-1)/2\relax}}{\setcounter{temporarygesamtpunkte}{\numexpr\thepunkte+\thecounterhalfpoints/2\relax}}%
 \null\vfill
 \footnotesize\renewcommand{\arraystretch}{1}
 \begin{center}
 \begin{tabular}{|C{3cm}C{3cm}C{3cm}C{3cm}C{3cm}|} \hline
 \ifthenelse{\equal{#2}{prozent}}{%
 Erreichte Punkte & Prozent & Gesamt & \multicolumn{2}{c|}{Note} \\
-&& \multirow{2}{*}{\ifthenelse{\equal{#1}{}}{\thepunkte}{#1}} && \\%
+&& \multirow{2}{*}{\ifthenelse{\equal{#1}{}}{\ifthenelse{\isodd{\thecounterhalfpoints}}{\thetemporarygesamtpunkte ,5}{\thetemporarygesamtpunkte}}{#1}} && \\%
 }{%
 Erreichte Punkte &Gesamt&\multicolumn{2}{c}{Note}& \\
-&\multirow{2}{*}{\ifthenelse{\equal{#1}{}}{\thepunkte}{#1}} &&& \\}
+&\multirow{2}{*}{\ifthenelse{\equal{#1}{}}{\ifthenelse{\isodd{\thecounterhalfpoints}}{\thetemporarygesamtpunkte ,5}{\thetemporarygesamtpunkte}}{#1}} &&& \\}
 &&&& \\ \hline \hline
 \scriptsize{Sehr gut} & \scriptsize{Gut} & \scriptsize{Befriedigend} & \scriptsize{Gen\"ugend} & \scriptsize{Nicht gen\"ugend} \\
-\scriptsize{\ifthenelse{\equal{#1}{}}{\thepunkte\ }{#1} ~-~ #3}& \scriptsize{#4 ~-~ #5} & \scriptsize{#6 ~-~ #7} & \scriptsize{#8 ~-~ #9} & \scriptsize{unter #9} \\ \hline
+\scriptsize{\ifthenelse{\equal{#1}{}}{\ifthenelse{\isodd{\thecounterhalfpoints}}{\thetemporarygesamtpunkte ,5}{\thetemporarygesamtpunkte} }{#1} ~-~ #3}& \scriptsize{#4 ~-~ #5} & \scriptsize{#6 ~-~ #7} & \scriptsize{#8 ~-~ #9} & \scriptsize{unter #9} \\ \hline
 \end{tabular}
 \end{center}\normalsize}
 
