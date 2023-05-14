@@ -599,6 +599,7 @@ dict_k4_name:
     'GU' : 'Gleichungen und Ungleichungen'
     'GSY' : 'Lineare Gleichungssysteme mit zwei Variablen'
     'FU' : 'Funktionen'
+    'LFU' : 'Lineare Funktionen'
     'NAT' : 'Anwendungen in Naturwissenschaft und Technik'
     'ST' : 'Statisitk'
     'LP' : 'Lehrsatz des Pythagoras'
@@ -636,13 +637,19 @@ dict_k4:
         - 'glv'
         - 'rlv'
     "FU":
-        - 'zo'
-        - 'glf'
-        - 'gqf'
-        - 'grf'
-        - 'hlf'
-        - 'ilf'
-        - 'ce'        
+        - 'def' 
+        - 'tzg'
+        - 'gzt'
+        - 'fzt'
+        - 'ivf'
+        - 'qf'
+        - 'rf'
+    "LFU":
+        - 'def'
+        - 'ezf'
+        - 'abf'
+        - 'dph'
+        - 'anw'       
     "NAT":
         - 'ph'
         - 'ba'
@@ -686,10 +693,12 @@ dict_k4:
 
 dict_unterkapitel:
     "aav" : "Anwendung im allgemeinen Viereck"
+    "abf" : "Ablesen des Funktionsgraphs"
     "ade" : "Anwendung im Deltoid"
     "adr" : "Anwendung im Dreieck"
     "af" : "Ähnliche Figuren"
     "am" : "Abstand messen"
+    "anw" : "Anwendungsaufgaben"
     "apr" : "Anwendung im Prisma"
     "apy" : "Anwendung in einer Pyramide"
     "arp" : "Anwendung im Rhombus und Parallelogramm"
@@ -709,13 +718,14 @@ dict_unterkapitel:
     "bgl" : "Bruchgleichungen"
     "bqw" : "Bezeichnung bei Quader und Würfel"
     "bw" : "Beweise von Satz des Pythagoras"
-    "ce" : "Charakteristische Eigenschaften linearer Funktionen"
     "ch" : "Mischaufgaben und chemische Reaktionen"
     "dbt" : "Dividieren von Bruchtermen"
+    "def" : "Definition"
     "dg" : "Direkt proportionale Größen"
     "di" : "Dividieren"
     "dipg" : "Direkt und indirekt proportionale Größen"
     "dk" : "Drehkegel"
+    "dph" : "Direkt proportional / homogen"
     "dqw" : "Graphische Darstellung von Quadratwurzeln"
     "dr" : "Dreieck"
     "drq" : "Deltoid, Rhombus, Quadrat"
@@ -735,10 +745,12 @@ dict_unterkapitel:
     "et" : "Einführung und Termstruktur"
     "ew" : "Einführung: Winkel"
     "enk" : "Erweiterung durch negative Koordinaten"
+    "ezf" : "Einzeichnen des Funktionsgraphs"
     "fg" : "Aufstellen von Formeln und Gleichungen"
     "fk" : "Flächeninhalt eines Kreises"
     "fks" : "Flächeninhalt eines Kreissektors"
     "fl" : "Flächeninhalt und Flächenmaße"
+    "fzt" : "Funktionsgleichung zu Tabelle"
     "gb" : "Grundbegriffe"
     "gbb" : "Grundbegriffe und Bezeichnungen"
     "gbd" : "Grundbegriffe und Darstellung"
@@ -748,25 +760,22 @@ dict_unterkapitel:
     "ggt" : "Größter gemeinsamer Teiler"
     "gkd" : "Gleitkommadarstellung"
     "gl" : "Gleichungen"
-    "glf" : "Gleichungen und Graphen linearer Funktionen"
     "glkf" : "Gegenseitige Lage von Kanten und Flächen"
     "glv" : "Graphisches Lösungsverfahren"
     "go" : "Gewöhnliches arithmetisches Mittel"
     "gw" : "Gewichtetest arithmetisches Mittel"
-    "gqf" : "Gleichungen und Graphen quadratischer Funktionen"
-    "grf" : "Gleichungen und Graphen rationaler Funktionen"
     "gs" : "Gleichseitiges Dreieck"
     "gwk" : "Gewichtetes arithmetisches Mittel und Klasseneinteilungen"
+    "gzt" : "Graph zu Tabelle"
     "hg" : "Histogramme"
     "hh" : "Herausheben"
-    "hlf" : "Homogene lineare Funktionen"
     "hsp" : "Höhenschnittpunkt"
     "hzt" : "Herausheben und Zerlegen von Termen"
     "ig" : "Indirekt proportionale Größen"
     "igd" : "Interpretieren von graphischen Darstellungen"
     "ikm" : "Inkreismittelpunkt"
-    "ilf" : "Inhomogene lineare Funktionen"
     "iv" : "Intervalle"
+    "ivf" : "Interpretation von Funktionsgraphen"
     "jz" : "Jahreszinsen"
     "ke" : "Klasseneinteilung"
     "keb" : "Kürzen und Erweitern von Bruchtermen"
@@ -817,8 +826,10 @@ dict_unterkapitel:
     "ri" : "Rauminhalt"
     "rlv" : "Rechnerisches Lösungsverfahren"
     "pnw" : "Parallel und Normalwinkel"
+    "qf" : "Quadratische Funktionen"
     "qw" : "Quadratwurzeln"
     "rd" : "Raumdiagonale"
+    "rf" : "Rationale Funktionen"
     "rq" : "Anwendung im Rechteck und Quadrat"
     "rqw" : "Rechnen mit Quadratwurzeln"
     "rve" : "Regelmäßiges Vieleck"
@@ -844,6 +855,7 @@ dict_unterkapitel:
     "tr" : "Trapez"
     "tra" : "Allgemeines Trapez"
     "trg" : "Gleichschenkliges Trapez"
+    "tzg" : "Tabelle zu Graph"
     "uew" : "Übetragen von Winkeln"
     "uf" : "Umformen von Formeln"
     "ug" : "Ungleichungen"
@@ -862,7 +874,6 @@ dict_unterkapitel:
     "zam" : "Zahlenmengen"
     "zm" : "Zeichnen im gegebenen Maßstab"
     "zma" : "Zeitmaße"
-    "zo" : "Zuordnungen, Tabellen und Graphen"
     "zs" : "Zahlenstrahl"
     "zz" : "Zeitdauer und Zeitpunkt"
     "zzr" : "Zinseszinsrechnung"
