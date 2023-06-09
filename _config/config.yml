@@ -636,6 +636,8 @@ dict_k4:
         - 'lgm2'
         - 'glv'
         - 'rlv'
+        - 'ulv'
+        - 'anw'
     "FU":
         - 'def' 
         - 'tzg'
@@ -649,6 +651,7 @@ dict_k4:
         - 'ezf'
         - 'abf'
         - 'dph'
+        - 'che'
         - 'anw'       
     "NAT":
         - 'ph'
@@ -719,6 +722,7 @@ dict_unterkapitel:
     "bqw" : "Bezeichnung bei Quader und Würfel"
     "bw" : "Beweise von Satz des Pythagoras"
     "ch" : "Mischaufgaben und chemische Reaktionen"
+    "che" : "Charakteristische Eigenschaften"
     "dbt" : "Dividieren von Bruchtermen"
     "def" : "Definition"
     "dg" : "Direkt proportionale Größen"
@@ -824,7 +828,7 @@ dict_unterkapitel:
     "rte" : "Rechnen mit Termen"
     "rh" : "Rhombus"
     "ri" : "Rauminhalt"
-    "rlv" : "Rechnerisches Lösungsverfahren"
+    "rlv" : "Rechnerisches Lösungsverfahren mit eindeutiger Lösung"
     "pnw" : "Parallel und Normalwinkel"
     "qf" : "Quadratische Funktionen"
     "qw" : "Quadratwurzeln"
@@ -860,6 +864,7 @@ dict_unterkapitel:
     "uf" : "Umformen von Formeln"
     "ug" : "Ungleichungen"
     "ukm" : "Umkreismittelpunkt"
+    "ulv" : "Unterschiedliche Lösungsfälle"
     "um" : "Umfang"
     "vg" : "Verbindung der Grundrechnungsarten"
     "vgl" : "Verhältnisgleichungen"
