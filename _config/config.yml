@@ -659,14 +659,12 @@ dict_k4:
         - 'ch'
         - 'te'
     "ST":
-        - 'stb'
-        - 'go'
-        - 'gw'
-        - 'mm'
-        - 'gwk'
-        - 'mem'
-        - 'qqb'
-        - 'st'                        
+        - 'ztm'
+        - 'wzm'
+        - 'stm'
+        - 'bpl'
+        - 'amd'
+                                
     "LP":
         - 'sdp'
         - 'kh'
@@ -701,6 +699,7 @@ dict_unterkapitel:
     "adr" : "Anwendung im Dreieck"
     "af" : "Ähnliche Figuren"
     "am" : "Abstand messen"
+    "amd" : "Arbeiten mit Diagrammen"
     "anw" : "Anwendungsaufgaben"
     "apr" : "Anwendung im Prisma"
     "apy" : "Anwendung in einer Pyramide"
@@ -719,6 +718,7 @@ dict_unterkapitel:
     "bae" : "Bruchterme aufstellen und einsetzen"
     "bf" : "Binomische Formeln"
     "bgl" : "Bruchgleichungen"
+    "bpl" : "Boxplot"
     "bqw" : "Bezeichnung bei Quader und Würfel"
     "bw" : "Beweise von Satz des Pythagoras"
     "ch" : "Mischaufgaben und chemische Reaktionen"
@@ -766,10 +766,7 @@ dict_unterkapitel:
     "gl" : "Gleichungen"
     "glkf" : "Gegenseitige Lage von Kanten und Flächen"
     "glv" : "Graphisches Lösungsverfahren"
-    "go" : "Gewöhnliches arithmetisches Mittel"
-    "gw" : "Gewichtetest arithmetisches Mittel"
     "gs" : "Gleichseitiges Dreieck"
-    "gwk" : "Gewichtetes arithmetisches Mittel und Klasseneinteilungen"
     "gzt" : "Graph zu Tabelle"
     "hg" : "Histogramme"
     "hh" : "Herausheben"
@@ -805,8 +802,6 @@ dict_unterkapitel:
     "mast" : "Maßstab"
     "mbt" : "Multiplizieren von Bruchtermen"
     "md" : "Multiplizieren und Dividieren"
-    "mem" : "Median und Modus"
-    "mm" : "Mittelwerte von Mittelwerten"
     "mu" : "Multiplizieren"
     "mw" : "Mittelwert"
     "mzw" : "Messen und Zeichnen von Winkeln"
@@ -824,7 +819,6 @@ dict_unterkapitel:
     "pw" : "Punktwolkendiagramme"
     "pwu" : "Partielles Wurzelziehen"
     "pz" : "Primzahlen"
-    "qqb" : "Quartile, Quantile und Boxplots"
     "rte" : "Rechnen mit Termen"
     "rh" : "Rhombus"
     "ri" : "Rauminhalt"
@@ -842,13 +836,13 @@ dict_unterkapitel:
     "sch" : "Schrägriss"
     "sdp" : "Satz des Pythagoras im rechtwinkligen Dreieck"
     "sf" : "Schnittfläche"
-    "st" : "Streuungsmaße"
     "sp" : "Schwerpunkt"
     "ss" : "Streckensymmetrale"
     "ssg" : "Strecke, Strahl, Gerade"
     "sss" : "Seiten-Seiten-Seiten-Satz"
     "ssw" : "Seiten-Seiten-Winkel-Satz"
     "stb" : "Statistische Berechnungen"
+    "stm" : "Streumaße (Spannweite, Quartile, Min, Max, empirische Varianz, Standardabweichung)"
     "sts" : "Strahlensatz"
     "sws" : "Seiten-Winkel-Seiten-Satz"
     "sy" : "Symmetrie"
@@ -876,10 +870,12 @@ dict_unterkapitel:
     "wsw" : "Winkel-Seiten-Winkel-Satz"
     "wv" : "Wiederholung der Eigenschaften von Vierecken"
     "wz" : "Wachstums- und Zerfallsprozesse"
+    "wzm" : "Weitere Zentralmaße (geom. Mittel, harmon. Mittel, ...)"
     "zam" : "Zahlenmengen"
     "zm" : "Zeichnen im gegebenen Maßstab"
     "zma" : "Zeitmaße"
     "zs" : "Zahlenstrahl"
+    "ztm" : "Zentralmaße (arithmetisches Mittel, Modus, Median)"
     "zz" : "Zeitdauer und Zeitpunkt"
     "zzr" : "Zinseszinsrechnung"
 ...
