@@ -684,6 +684,7 @@ dict_k4:
         - 'fk'
         - 'fks'
         - 'kr'
+        - 'kfg'
     "ZKK":
         - 'dz'
         - 'dk'
@@ -752,7 +753,7 @@ dict_unterkapitel:
     "ezf" : "Einzeichnen des Funktionsgraphs"
     "fg" : "Aufstellen von Formeln und Gleichungen"
     "fk" : "Flächeninhalt eines Kreises"
-    "fks" : "Flächeninhalt eines Kreissektors"
+    "fks" : "Flächeninhalt von Kreissektor und Kreisegment"
     "fl" : "Flächeninhalt und Flächenmaße"
     "fzt" : "Funktionsgleichung zu Tabelle"
     "gb" : "Grundbegriffe"
@@ -781,6 +782,7 @@ dict_unterkapitel:
     "ke" : "Klasseneinteilung"
     "keb" : "Kürzen und Erweitern von Bruchtermen"
     "kest" : "Jahreszinsen mit Kapitalertragsteuer"
+    "kfg" : "Kreisfiguren"
     "kgv" : "Kleinstes gemeinsames Vielfaches"
     "kh" : "Kathetensatz und Höhensatz"
     "kr" : "Flächeninhalt und Umfang eines Kreisrings"
