@@ -5,8 +5,7 @@ __LaMA ist ein Programm, das AHS-Mathematiklehrer·innen das systematische Abspe
 
 ## CHANGELOG
 v4.5.3: [BETA]
-- bug fix:
-- escape KeyError for broken examples creator
+- bug fix: escape KeyError for broken examples creator
 - bug fix: hide & shoe items
 - bug fix: wizard coordinate system - turn off nonogramm
 - bug fix: 'beurteilung' not assigned
