@@ -498,7 +498,7 @@ dict_k2:
 
 dict_k3_name:
     'GZ' : 'Ganze Zahlen'
-    'RZ' : 'Rationale Zaheln'
+    'RZ' : 'Rationale Zahlen'
     'KS' : 'Koordinatensystem'
     'TE' : 'Terme'
     "GU" : "Gleichungen und Ungleichungen"
