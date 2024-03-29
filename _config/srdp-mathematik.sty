@@ -10,12 +10,11 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}[1996/12/26]
-\ProvidesPackage{srdp-mathematik}[2024/01/03 v1.12.2 Standard-Schularbeitsformate]
+\ProvidesPackage{srdp-mathematik}[2024/03/29 v1.13.0 Standard-Schularbeitsformate]
 
 
 \usepackage{color}
 \usepackage{xcolor}
-\usepackage{xfp}
 \usepackage{float}
 \usepackage{multicol}
 \usepackage{multirow}
@@ -46,6 +45,9 @@
 \usepackage{ziffer}
 \usepackage{eso-pic}
 \usepackage{esvect}
+\usepackage{phaistos}
+\usepackage{substitutefont}
+\substitutefont{LPH}{\familydefault}{cmr}
 \renewcommand{\vec}[1]{\vv{#1}}
 \usepackage{graphicx}
 \usepackage{setspace}
@@ -327,7 +329,7 @@
 \newcommand{\ASubitem}[1]{\Subitem{\fbox{A} #1}}
 \NewEnviron{aufgabenstellung}[1]{\let\itemalt\item
 \renewcommand*{\item}{\setcounter{subitemcounter}{0}\itemalt}
-\subsubsection{Aufgabenstellung:}%
+\subsubsection*{Aufgabenstellung:}%
 \begin{enumerate}[a),leftmargin=0pt]
 \item {\BODY}
 \end{enumerate}%
@@ -642,7 +644,9 @@ Beurteilung: \rule{10.5cm}{0.4pt}
 \newcounter{antworta}\newcounter{antwortb}\newcounter{antwortc}\newcounter{antwortd}\newcounter{antworte}\newcounter{antwortf}\newcounter{antwortg}\newcounter{antworth}\newcounter{antworti}
 \pgfmathsetseed{\theZufall}
 
-\newcommand{\Gruppe}{\theZufall}
+
+\newcommand{\Gruppe}{\@Alph{\inteval{\theZufall+1}}}
+\newcommand{\hiddengroup}[0]{\flushright\foreach\i in {0,...,\theZufall}{.}\flushleft}
 
 %
 %%%%%%%      ZUORDNUNGSAUFGABE
