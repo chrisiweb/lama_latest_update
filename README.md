@@ -14,6 +14,7 @@ v4.6.1: [BETA]
 - enable automatic group creation from LaTeX file
 - bug fix: double images are added in sage
 - bug fix: avoid futile brackets in WW
+- bug fix: import examples with images
   
 v4.6.0:
 - new Worksheet Wizard: Primefactorization 
