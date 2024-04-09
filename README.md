@@ -15,6 +15,10 @@ v4.6.1: [BETA]
 - bug fix: double images are added in sage
 - bug fix: avoid futile brackets in WW
 - bug fix: import examples with images
+- bug fix: errors in WW
+- bug fix: rechoose nonogramm, when too small
+- bug fix: roman numerals
+- bug fix: steps number line
   
 v4.6.0:
 - new Worksheet Wizard: Primefactorization 
