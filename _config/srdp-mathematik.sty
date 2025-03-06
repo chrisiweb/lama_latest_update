@@ -51,6 +51,7 @@
 \usepackage[inline, shortlabels]{enumitem}
 \usepackage{xparse}
 \usepackage{eurosym, xspace}
+\usepackage{fp}
 \renewcommand*\euro{\officialeuro\xspace}
 \newcommand{\degre}{\ensuremath{^\circ}}
 
@@ -409,9 +410,25 @@
 \NewDocumentCommand{\notenschluessel}{ O{} O{} O{}  m m m m}{\ifthenelse{\isodd{\thecounterhalfpoints}}{\setcounter{temporarygesamtpunkte}{\numexpr\thepunkte+(\thecounterhalfpoints-1)/2\relax}}{\setcounter{temporarygesamtpunkte}{\numexpr\thepunkte+\thecounterhalfpoints/2\relax}}%
 \null\vfill
 \STautoround{3}\renewcommand{\arraystretch}{0}\tiny
-\begin{spreadtab}[\STsavecell\gutgenau{b2} \STsavecell\befriedigendgenau{c2} \STsavecell\genuegendgenau{d2} \STsavecell\nichtgenuegendgenau{e2} 
-\STsavecell\gut{b3}  \STsavecell\befriedigend{c3} \STsavecell\genuegend{d3} \STsavecell\nichtgenuegend{e3}  
-\STsavecell\gutpluseins{b4} \STsavecell\befriedigendpluseins{c4}  \STsavecell\genuegendpluseins{d4} \STsavecell\nichtgenuegendpluseins{e4} \STsavecell\gutminuseins{b5} \STsavecell\befriedigendminuseins{c5} \STsavecell\genuegendminuseins{d5} \STsavecell\nichtgenuegendminuseins{e5}]{{tabular}{ccccc}}
+\STset{ save list = {
+\gutgenau = b2,
+\befriedigendgenau = c2,
+\genuegendgenau = d2,
+\nichtgenuegendgenau = e2,
+\gut = b3,
+\befriedigend = c3,
+\genuegend = d3,
+\nichtgenuegend = e3,
+\gutpluseins = b4,
+\befriedigendpluseins = c4,
+\genuegendpluseins = d4,
+\nichtgenuegendpluseins = e4,
+\gutminuseins = b5,
+\befriedigendminuseins = c5,
+\genuegendminuseins = d5,
+\nichtgenuegendminuseins = e5
+}}
+\begin{spreadtab}{{tabular}{ccccc}}
 	\SThidecol \thetemporarygesamtpunkte &\SThidecol 1 &\SThidecol2 &\SThidecol 3 &\SThidecol 4 \\ 
 	& a1*#4 &a1*#5 & a1*#6 & a1*#7 \\
 	&trunc(a1*#4,0) & trunc(a1*#5,0) &trunc(a1*#6,0) &trunc(a1*#7,0) \\
@@ -456,9 +473,25 @@ Erreichte Punkte &Gesamt&\multicolumn{2}{c}{Note}& \\
 \NewDocumentCommand{\punkteverteilung}{ O{} m m m m}{
 \null\vfill
 \STautoround{3}\renewcommand{\arraystretch}{0}\tiny
-\begin{spreadtab}[\STsavecell\gutgenau{b2} \STsavecell\befriedigendgenau{c2} \STsavecell\genuegendgenau{d2} \STsavecell\nichtgenuegendgenau{e2} 
-\STsavecell\gut{b3}  \STsavecell\befriedigend{c3} \STsavecell\genuegend{d3} \STsavecell\nichtgenuegend{e3}  
-\STsavecell\gutpluseins{b4} \STsavecell\befriedigendpluseins{c4}  \STsavecell\genuegendpluseins{d4} \STsavecell\nichtgenuegendpluseins{e4} \STsavecell\gutminuseins{b5} \STsavecell\befriedigendminuseins{c5} \STsavecell\genuegendminuseins{d5} \STsavecell\nichtgenuegendminuseins{e5}]{{tabular}{ccccc}}
+\STset{ save list = {
+\gutgenau = b2,
+\befriedigendgenau = c2,
+\genuegendgenau = d2,
+\nichtgenuegendgenau = e2,
+\gut = b3,
+\befriedigend = c3,
+\genuegend = d3,
+\nichtgenuegend = e3,
+\gutpluseins = b4,
+\befriedigendpluseins = c4,
+\genuegendpluseins = d4,
+\nichtgenuegendpluseins = e4,
+\gutminuseins = b5,
+\befriedigendminuseins = c5,
+\genuegendminuseins = d5,
+\nichtgenuegendminuseins = e5
+}}
+\begin{spreadtab}{{tabular}{ccccc}}
 	\SThidecol\thepunkte &\SThidecol 1 &\SThidecol2 &\SThidecol 3 &\SThidecol 4 \\ 
 	& a1*#2 &a1*#3 & a1*#4 & a1*#5 \\
 	&trunc(a1*#2,0) & trunc(a1*#3,0) &trunc(a1*#4,0) &trunc(a1*#5,0) \\
@@ -657,7 +690,8 @@ Beurteilung: \rule{10.5cm}{0.4pt}
 \pgfmathrandomitem\z{group}\setcounter{antwortb}{\z}\prunelist{group}
 \pgfmathrandomitem\z{group}\setcounter{antwortc}{\z}\prunelist{group}
 \pgfmathrandomitem\z{group}\setcounter{antwortd}{\z}\prunelist{group}
-\begin{spreadtab}[\STsavecell{\links}{a2}\STsavecell{\rechts}{b2}]{{tabular}{cc}}
+\STset{ save list = {\links = a2, \rechts = b2}}
+\begin{spreadtab}{{tabular}{cc}}
 \SThidecol 0.45& \SThidecol \\ 
 a1+(#1) & (0.9-a2) \\
 \end{spreadtab}
@@ -709,8 +743,9 @@ entsteht! \vspace{0.3cm}
 
 \bgroup \jeroen@set@keys{#2}
 \jeroen@get{text}
-\begin{spreadtab}[\STsavecell{\links}{b2}\STsavecell{\rechts}{c2}]{{tabular}{ccc}}
- \SThidecol&\SThidecol 0.45& \SThidecol \\ 
+\STset{save list = {\links = b2, \rechts = c2}}
+\begin{spreadtab}{{tabular}{ccc}}
+\SThidecol&\SThidecol 0.45& \SThidecol \\ 
 &b1+(#1) & (0.9-b2) \\
 \end{spreadtab}\vspace{0.5cm}
 
@@ -766,7 +801,8 @@ Complete the following sentence by putting a cross next to one of the given poss
 
 \bgroup \jeroen@set@keys{#2}
 \jeroen@get{text}
-\begin{spreadtab}[\STsavecell{\links}{b2}\STsavecell{\rechts}{c2}]{{tabular}{ccc}}
+\STset{save list = {\links = b2, \rechts = c2}}
+\begin{spreadtab}{{tabular}{ccc}}
  \SThidecol&\SThidecol 0.45& \SThidecol \\ 
  \SThiderow &b1+(#1) & (0.9-b2) \\
 \end{spreadtab}\vspace{0.5cm}
@@ -1568,7 +1604,8 @@ Complete the following sentence by putting a cross next to one of the given poss
 \setcounter{ausgleichspkte}{\jeroen@get{AP}}
 \setcounter{teilzwei}{\jeroen@get{T2}}
 \STautoround{0}
-\begin{spreadtab}[\STsavecell{\positiv}{b1} \STsavecell{\gesamtpunkte}{c1}]{{tabular}{ccc}}
+\STset{save list = {\positiv = b1, \gesamtpunkte = c1}}
+\begin{spreadtab}{{tabular}{ccc}}
  \SThiderow &\theteileins/3*2 & \theteileins+\theausgleichspkte+\theteilzwei \\
 \end{spreadtab}
 
@@ -1578,7 +1615,20 @@ Die Schularbeit besteht aus Teil 1 (Grundkompetenzen) und Teil 2 (vernetzte und 
 
 \tiny
 \STautoround{0}
-\begin{spreadtab}[\STsavecell\brzweigrenze{f1}  \STsavecell\gut{b2} \STsavecell\befriedigend{c2}  \STsavecell{\genuegend}{d2} \STsavecell{\nichtgenuegend}{e2} \STsavecell\brzweibefriedigend{f2} \STsavecell{\gutminuseins}{b3}  \STsavecell{\befriedigendminuseins}{c3} \STsavecell{\genuegendminuseins}{d3} \STsavecell\brzweigrenzeminuseins{e3} \STsavecell\brzweibefriedigendminuseins{f3}]{{tabular}{cccccc}}
+\STset{save list = {
+\brzweigrenze = f1,
+\gut = b2,
+\befriedigend = c2,
+\genuegend = d2,
+\nichtgenuegend = e2,
+\brzweibefriedigend = f2,
+\gutminuseins = b3,
+\befriedigendminuseins = c3,
+\genuegendminuseins = d3,
+\brzweigrenzeminuseins = e3,
+\brzweibefriedigendminuseins = f3
+}}
+\begin{spreadtab}{{tabular}{cccccc}}
 \SThidecol \gesamtpunkte & \SThidecol 1 &\SThidecol 2 & \SThidecol 3 &\SThidecol 4 & \SThidecol \gesamtpunkte*0.75\\ % \SThidecol 
 &a1*#1 &a1*#2 &a1*#3 &a1*#4 & \gesamtpunkte*0.6\\
 & b2-1 &c2-1 &d2-1 & f1-1 & f2-1\\ %\SThiderow
@@ -1651,7 +1701,8 @@ entsteht! \vspace{0.3cm}
 
 \bgroup \jeroen@set@keys{#2}
 \jeroen@get{text}
-\begin{spreadtab}[\STsavecell{\links}{b2}\STsavecell{\rechts}{c2}]{{tabular}{ccc}}
+\STset{save list = {\links = b2, \rechts = c2}}
+\begin{spreadtab}{{tabular}{ccc}}
  \SThidecol&\SThidecol 0.45& \SThidecol \\ 
  \SThiderow &b1+(#1) & (0.9-b2) \\
 \end{spreadtab}
@@ -1701,7 +1752,8 @@ Complete the following sentence by putting a cross next to one of the given poss
 
 \bgroup \jeroen@set@keys{#2}
 \jeroen@get{text}
-\begin{spreadtab}[\STsavecell{\links}{b2}\STsavecell{\rechts}{c2}]{{tabular}{ccc}}
+\STset{save list = {\links = b2, \rechts = c2}}
+\begin{spreadtab}{{tabular}{ccc}}
  \SThidecol&\SThidecol 0.45& \SThidecol \\ 
  \SThiderow &b1+(#1) & (0.9-b2) \\
 \end{spreadtab}
