@@ -7,8 +7,10 @@ __LaMA ist ein Programm, das AHS-Mathematiklehrer·innen das systematische Abspe
 v4.6.3:
 - enable sending service files to developer to ensure better support 
 - bug fixes
+  
 v4.6.2:
 - bug fix
+  
 v4.6.1:
 - bug fix: upload content for database not working properly
 - bug fix: WW single_subtraction not working
