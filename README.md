@@ -4,6 +4,16 @@
 __LaMA ist ein Programm, das AHS-Mathematiklehrer·innen das systematische Abspeichern von Unterstufen-, Oberstufen-Typ1- und Oberstufen-Typ2-Aufgaben ermöglicht. LaMA erleichtert die Suche dieser Aufgaben sowie die Erstellung von Prüfungen, wie Schularbeiten, Grundkompetenzchecks, usw.__  
 
 ## CHANGELOG
+v4.6.6:
+- restructure "Zusatzthemen"
+- bug fixes
+
+v4.6.5:
+- bug fix
+
+v4.6.4:
+- bug fixes
+  
 v4.6.3:
 - enable sending service files to developer to ensure better support 
 - bug fixes
