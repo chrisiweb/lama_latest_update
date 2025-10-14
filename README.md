@@ -1,9 +1,12 @@
 # LaMA - LaTeX Mathematik Assistent
-*Aktuelle Version: [v4.7.2]*
+*Aktuelle Version: [v4.7.3]*
 
 __LaMA ist ein Programm, das AHS-Mathematiklehrer·innen das systematische Abspeichern von Unterstufen-, Oberstufen-Typ1- und Oberstufen-Typ2-Aufgaben ermöglicht. LaMA erleichtert die Suche dieser Aufgaben sowie die Erstellung von Prüfungen, wie Schularbeiten, Grundkompetenzchecks, usw.__  
 
 ## CHANGELOG
+v4.7.3:
+- bug fix: different versions of srdp-mathematik.sty error on mac
+
 v4.7.2:
 - bug fix: config file not found
   
