@@ -4,6 +4,9 @@
 __LaMA ist ein Programm, das AHS-Mathematiklehrer·innen das systematische Abspeichern von Unterstufen-, Oberstufen-Typ1- und Oberstufen-Typ2-Aufgaben ermöglicht. LaMA erleichtert die Suche dieser Aufgaben sowie die Erstellung von Prüfungen, wie Schularbeiten, Grundkompetenzchecks, usw.__  
 
 ## CHANGELOG
+v5.0.0:
+- install LaTeX Distribution with LaMA, to enable easy download and installation of LaMA
+  
 v4.7.3:
 - bug fix: different versions of srdp-mathematik.sty error on mac
 
