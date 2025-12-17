@@ -1,25 +1,9 @@
 # LaMA - LaTeX Mathematik Assistent
-*Aktuelle Version: [v5.0.3]*
+*Aktuelle Version: [v4.7.3]*
 
 __LaMA ist ein Programm, das AHS-Mathematiklehrer·innen das systematische Abspeichern von Unterstufen-, Oberstufen-Typ1- und Oberstufen-Typ2-Aufgaben ermöglicht. LaMA erleichtert die Suche dieser Aufgaben sowie die Erstellung von Prüfungen, wie Schularbeiten, Grundkompetenzchecks, usw.__  
 
 ## CHANGELOG
-v5.0.3:
-- edit lama service file
-- bug fix: repair missing key "halfpoints"
-- bug fix: error refresh_ddb
-
-v5.0.2:
-- bug fix: portable ghsotscript missing gswin64.exe for Windows
-- get rid of srdp-packages in Teildokument
-  
-v5.0.1:
-- bug fix: missing gs_init.ps on MacOS
-- update srdp-mathematik.sty to version 1.14.0
-  
-v5.0.0:
-- install LaTeX Distribution with LaMA, to enable easy download and installation of LaMA
-  
 v4.7.3:
 - bug fix: different versions of srdp-mathematik.sty error on mac
 
