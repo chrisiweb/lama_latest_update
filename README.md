@@ -7,6 +7,7 @@ __LaMA ist ein Programm, das AHS-Mathematiklehrer·innen das systematische Abspe
 v5.0.5:
 - bug fix: create file sage
 - bug fix: refresh DDB
+- bug fix: restart LaMA after update on Windows
   
 v5.0.4:
 - downgrade python version to 3.12, because of certificate verfication issues
