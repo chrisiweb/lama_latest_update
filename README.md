@@ -1,17 +1,10 @@
 # LaMA - LaTeX Mathematik Assistent
-*Aktuelle Version: [v5.0.6]*
+*Aktuelle Version: [v5.0.4]*
 
 __LaMA ist ein Programm, das AHS-Mathematiklehrer·innen das systematische Abspeichern von Unterstufen-, Oberstufen-Typ1- und Oberstufen-Typ2-Aufgaben ermöglicht. LaMA erleichtert die Suche dieser Aufgaben sowie die Erstellung von Prüfungen, wie Schularbeiten, Grundkompetenzchecks, usw.__  
 
 ## CHANGELOG
-v5.0.6:
-- bug fix: refresh_ddb (_database_addon)
 
-v5.0.5:
-- bug fix: create file sage
-- bug fix: refresh DDB
-- bug fix: restart LaMA after update on Windows
-  
 v5.0.4:
 - downgrade python version to 3.12, because of certificate verfication issues
 - automatic .git delete, if database download was aborted
