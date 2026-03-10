@@ -1,5 +1,5 @@
 # LaMA - LaTeX Mathematik Assistent
-*Aktuelle Version: [v5.0.6]*
+*Aktuelle Version: [v5.0.6b]*
 
 (Version auch verfügbar unter: https://raw.githubusercontent.com/chrisiweb/lama_latest_update/master/__version__.txt)
 
