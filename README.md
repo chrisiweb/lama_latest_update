@@ -1,4 +1,4 @@
-<!-- VERSION:[v5.0.6] -->
+<!-- VERSION:[v5.0.6b] -->
 
 # LaMA - LaTeX Mathematik Assistent
 *Aktuelle Version: [v5.0.6]*
