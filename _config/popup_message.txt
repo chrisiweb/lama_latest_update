@@ -1,0 +1,9 @@
+<b>Die neue Version von LaMA ({}) verwendet Befehle des aktuellsten "srdp-mathematik"-Pakets. Um die volle Funktionsfähigkeit von LaMA zu gewährleisten, sollte das LaTeX-Paket auf Ihrem Gerät manuell aktualisiert werden.</b><br><br><br>
+
+Eine direkte Aktualisierung des "srdp-mathematik"-Pakets über LaMA kann via<br>
+
+<i>"Optionen -> Update ... -> srdp-mathematik.sty aktualisieren"</i><br>
+
+durchgeführt werden.<br><br>
+
+Sollte dies nicht möglich sein, melden Sie sich bitte unter: lama.helpme@gmail.com<br>
