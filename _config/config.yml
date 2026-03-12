@@ -207,6 +207,7 @@ k8_beschreibung:
     "wm": "Wirtschaftsmathematik"
 
 dict_gk:
+    "!": "!"
     "ag11": "AG 1.1"
     "ag12": "AG 1.2"
     "ag13": "AG-L 1.3"
