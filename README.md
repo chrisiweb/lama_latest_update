@@ -10,7 +10,6 @@ v5.0.9:
   
 v5.0.7 & v5.0.8:
 - bug fix: broken update
-
   
 v5.0.6:
 - bug fix: refresh_ddb (_database_addon)
