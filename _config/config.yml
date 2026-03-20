@@ -584,7 +584,8 @@ dict_k3_name:
     'AE' : 'Ähnlichkeiten'
     'LP' : 'Lehrsatz des Pythagoras'
     'PR' : 'Prisma'
-    'PY' : 'Pyramide'  
+    'PY' : 'Pyramide'
+    'WS' : 'Wahrscheinlichkeit'  
 
 
 dict_k3:
@@ -627,14 +628,9 @@ dict_k3:
         - 'kest'
         - 'zzr'
         - 'wz'
-
     "ST":
-        - 'stb'
-        - 'kt'
-        - 'ke'
-        - 'hg'
-        - 'pw'
-        
+        - 'gda'
+        - 'amm'   
     "FL":
         - 'wv'
         - 'pg'
@@ -664,7 +660,11 @@ dict_k3:
 
     "PY":
         - 'eda'
-        - 'ov'        
+        - 'ov'
+    "WS":
+        - 'iwb'
+        - 'wks'
+        - 'lwk'            
 
 
 dict_k4_name:
@@ -778,6 +778,7 @@ dict_unterkapitel:
     "ah" : "Absolute Häufigkeiten"
     "am" : "Abstand messen"
     "amd" : "Arbeiten mit Diagrammen"
+    "amm" : "Aufzeigen von Manipulationsmöglichkeiten"
     "anw" : "Anwendungsaufgaben"
     "apr" : "Anwendung im Prisma"
     "apy" : "Anwendung in einer Pyramide"
@@ -830,7 +831,7 @@ dict_unterkapitel:
     "enk" : "Erweiterung durch negative Koordinaten"
     "ezf" : "Einzeichnen des Funktionsgraphs"
     "fa" : "Fläche"
-    "fg" : "Aufstellen von Formeln und Gleichungen"
+    "fg" : "Formeln und Gleichungen"
     "fk" : "Flächeninhalt eines Kreises"
     "fks" : "Flächeninhalt von Kreissektor und Kreisegment"
     "fl" : "Flächeninhalt"
@@ -841,6 +842,7 @@ dict_unterkapitel:
     "gbd" : "Grundbegriffe und Darstellung"
     "gc" : "Gleichschenkliges Dreieck"
     "gd" : "Anwendung im gleichschenkligen Dreieck"
+    "gda" : "Graphische Darstellungen"
     "gdw" : "Berechnen des Grundwerts"
     "ge" : "Geldbeträge"
     "ggt" : "Größter gemeinsamer Teiler"
@@ -859,6 +861,7 @@ dict_unterkapitel:
     "ikm" : "Inkreismittelpunkt"
     "iv" : "Intervalle"
     "ivf" : "Interpretation von Funktionsgraphen"
+    "iwb" : "Intuitiver Wahrscheinlichkeitsbegriff"
     "jz" : "Jahreszinsen"
     "ke" : "Klasseneinteilung"
     "keb" : "Kürzen und Erweitern von Bruchtermen"
@@ -881,6 +884,7 @@ dict_unterkapitel:
     "lgm2" : "Eine lineare Gleichung mit zwei Variablen"
     "lkb" : "Länge des Kreisbogens"
     "lug" : "Lösen von Ungleichungen"
+    "lwk" : "Laplace Wahrscheinlichkeit"
     "ma" : "Massangaben - Geld, Laengen, Masse, usw."
     "mad" : "Masse und Dichte"
     "mas" : "Massen"
@@ -955,6 +959,7 @@ dict_unterkapitel:
     "vo" : "Vergleichen und ordnen"
     "vv" : "Verschiede Verhältnisse"
     "wd" : "Winkel im Dreieck"
+    "wks" : "Wahrscheinlichkeit als Schätzwert"
     "wm" : "Bezeichnungen von Winkeln und Winkelmaße"
     "ws" : "Winkelsymmetrale"
     "wsw" : "Winkel-Seiten-Winkel-Satz"
