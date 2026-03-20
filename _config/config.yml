@@ -135,7 +135,6 @@ zusatzthemen_beschreibung:
     "wf": "Winkelfunktionen"
     "lgf": "Logarithmusfunktionen"
     "rf": "Verschiedene reelle Funktionen"
-
     "Differential- & Integralrechnung": "---"
     "sdb": "Stetigkeit und Differenzierbarkeit"
     "dr": "Differentialrechnung"
@@ -159,6 +158,7 @@ zusatzthemen_beschreibung:
     "dwv": "Diskrete Wahrscheinlichkeitsverteilungen"
     "sws": "Stetige Wahrscheinlichkeitsverteilungen"
     "bus": "Beurteilende Statistik"
+    "noa": "Normalapproximation der Binomialverteilung"
     "Kegelschnitte": "---"
     "kkk": "Kreise, Kugeln, Kegelschnittslinien und andere Kurven"
     "Matrizen": "---"
