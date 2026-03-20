@@ -679,7 +679,8 @@ dict_k4_name:
     'ST' : 'Statisitk'
     'LP' : 'Lehrsatz des Pythagoras'
     'BKR' : 'Berechnungen am Kreis'
-    'ZKK' : 'Zylinder, Kegel, Kugel' 
+    'ZKK' : 'Zylinder, Kegel, Kugel'
+    'WS' : 'Wahrscheinlichkeit' 
 
 
 dict_k4:
@@ -692,6 +693,8 @@ dict_k4:
         - 'dqw'
     "TE":
         - 'et'
+        - 'aut'
+        - 'lgl'
         - 'rte'
         - 'bf'
         - 'hzt'
@@ -764,6 +767,8 @@ dict_k4:
         - 'dz'
         - 'dk'
         - 'ku'
+    "WS":
+        - 'zfe'
 
 
 
@@ -789,6 +794,7 @@ dict_unterkapitel:
     "atr" : "Anwendung im Trapez"
     "asg" : "Addieren und Subtrahieren mit gleichem Nenner"
     "asu" : "Addieren und Subtrahieren mit unterschiedlichem Nenner"
+    "aut" : "Aufstellen und Umformen von Termen und Formeln"
     "av" : "Allgemeines Viereck"
     "ave" : "Allgemeines Vieleck"
     "avv" : "Allgemeines Viereck und Vieleck"
@@ -967,6 +973,7 @@ dict_unterkapitel:
     "wz" : "Wachstums- und Zerfallsprozesse"
     "wzm" : "Weitere Zentralmaße (geom. Mittel, harmon. Mittel, ...)"
     "zam" : "Zahlenmengen"
+    "zfe" : "Ein- und zweistufige Zufallsexperimente"
     "zm" : "Zeichnen im gegebenen Maßstab"
     "zma" : "Zeitmaße"
     "zs" : "Zahlenstrahl"
