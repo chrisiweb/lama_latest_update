@@ -465,15 +465,18 @@ dict_k2_name:
     'TBK' : 'Teilbarkeit natürlicher Zahlen'
     'BZ' : 'Bruchzahlen'
     'GU' : 'Gleichungen und Ungleichungen'
+    "GTF" : "Gleichungen, Terme und Formeln"
     'DIP' : 'Direkte und indirekte Proportionalität'
     'PR' : 'Prozentrechnung'
-    'ST' : 'Statisitk' 
+    'ST' : 'Statisitk'
+    'GZ' : 'Ganze Zahlen' 
     'EGG' : 'Erweiterung der geometrischen Grundbegriffe'
     'DR' : 'Dreiecke'
     'DRK' : 'Dreieckskonstruktionen'
     'DRE' : 'Besondere Eigenschaften des Dreiecks'
     'DRB' : 'Besondere Dreiecke'
     'VE' : 'Vierecke und regelmäßige Vielecke'
+    'FL' : 'Flächeninhalte'
     'PRI' : 'Prisma' 
 
 
@@ -487,14 +490,18 @@ dict_k2:
     "BZ":
         - "ef"
         - "ek"
+        - "rh"
         - "md"
         - "as"
         - "vg"
-    
     "GU":
         - "gl"
         - "ug"
-
+    "GTF":
+        - "tm"
+        - "gl"
+        - "fo"
+        - "ug"
     "DIP":
         - 'dg'
         - 'ig'
@@ -505,9 +512,15 @@ dict_k2:
         - 'ps'
         - 'gdw'
     "ST":
+        - 'arh'
         - 'stb'
+        - 'stk'
         - 'egd'
         - 'igd'
+    "GZ":
+        - 'ef'
+        - 'vo'
+        - 'as'
     "EGG":
         - 'wm'
         - 'uew'
@@ -544,6 +557,13 @@ dict_k2:
         - 'av'
         - 'ave'
         - 'rve'
+    "FL":
+        - 'wv'
+        - 'pg'
+        - 'dr'
+        - 'drq'
+        - 'tr'
+        - 'avv' 
     "PRI":
         - 'ebf'
         - 'sf'
@@ -761,6 +781,7 @@ dict_unterkapitel:
     "anw" : "Anwendungsaufgaben"
     "apr" : "Anwendung im Prisma"
     "apy" : "Anwendung in einer Pyramide"
+    "arh" : "Absolute und relative Häufigkeiten"
     "arp" : "Anwendung im Rhombus und Parallelogramm"
     "arq" : "Anwendung im Rechteck und Quadrat"
     "as" : "Addieren und Subtrahieren"
@@ -893,6 +914,7 @@ dict_unterkapitel:
     "qw" : "Quadratwurzeln"
     "rd" : "Raumdiagonale"
     "rf" : "Rationale Funktionen"
+    "rh" : "Relative Häufigkeit"
     "rq" : "Anwendung im Rechteck und Quadrat"
     "rqw" : "Rechnen mit Quadratwurzeln"
     "rve" : "Regelmäßiges Vieleck"
@@ -907,10 +929,11 @@ dict_unterkapitel:
     "sss" : "Seiten-Seiten-Seiten-Satz"
     "ssw" : "Seiten-Seiten-Winkel-Satz"
     "stb" : "Statistische Berechnungen"
+    "stk" : "Statistische Kennzahlen"
     "stm" : "Streumaße (Spannweite, Quartile, Min, Max, empirische Varianz, Standardabweichung)"
     "sts" : "Strahlensatz"
     "sws" : "Seiten-Winkel-Seiten-Satz"
-    "sy" : "Symmetrie"
+    "sy" : "Symmetrie und Kongruenz"
     "syf" : "Symmetrische Figuren"
     "te" : "Anwendungen in der Technik"
     "tgd" : "Tabellen und graphische Darstellungen"
@@ -929,6 +952,7 @@ dict_unterkapitel:
     "vg" : "Verbindung der Grundrechnungsarten"
     "vgl" : "Verhältnisgleichungen"
     "vgz" : "Verhältnisse von Größen und Zahlen"
+    "vo" : "Vergleichen und ordnen"
     "vv" : "Verschiede Verhältnisse"
     "wd" : "Winkel im Dreieck"
     "wm" : "Bezeichnungen von Winkeln und Winkelmaße"
