@@ -484,7 +484,7 @@ dict_k2:
     "BZ":
         - "ef"
         - "ek"
-        - "rh"
+        - "reh"
         - "md"
         - "as"
         - "vg"
@@ -549,7 +549,7 @@ dict_k2:
         - 'ave'
         - 'rve'
     "FL":
-        - 'wv'
+        - 'req'
         - 'pg'
         - 'dr'
         - 'drq'
@@ -899,19 +899,21 @@ dict_unterkapitel:
     "ps" : "Berechnen des Prozentsatzes"
     "pw" : "Punktwolkendiagramme"
     "pwu" : "Partielles Wurzelziehen"
-    "pz" : "Primzahlen"
-    "rte" : "Rechnen mit Termen"
-    "rh" : "Rhombus"
-    "ri" : "Rauminhalt"
+    "pz" : "Primzahlen"  
     "rlv" : "Rechnerisches L\u00f6sungsverfahren mit eindeutiger L\u00f6sung"
     "pnw" : "Parallel und Normalwinkel"
     "qf" : "Quadratische Funktionen"
     "qw" : "Quadratwurzeln"
     "rd" : "Raumdiagonale"
+    "reh" : "Relative H\u00e4ufigkeit"
+    "req" : "Rechteck und Quadrat"
     "rf" : "Rationale Funktionen"
-    "rh" : "Relative H\u00e4ufigkeit"
+    "rh" : "Rhombus"
+    "ri" : "Rauminhalt"
+    "rlv" : "Rechnerisches L\u00f6sungsverfahren mit eindeutiger L\u00f6sung"
     "rq" : "Anwendung im Rechteck und Quadrat"
     "rqw" : "Rechnen mit Quadratwurzeln"
+    "rte" : "Rechnen mit Termen"
     "rve" : "Regelm\u00e4\u00dfiges Vieleck"
     "rvz" : "Runden von Zahlen"
     "rw" : "Rechtwinkliges Dreieck (Satz von Thales, Fl\u00e4che, ...)"
