@@ -378,7 +378,6 @@ dict_k1_name:
     "MA" : "Maßeinheiten"
     "BZ" : "Bruchzahlen"
     "ST" : "Statisitk"
-    "GU" : "Gleichungen und Ungleichungen"
     "GTF" : "Gleichungen, Terme und Formeln"
     "GG" : "Geometrische Grundbegriffe"
     "KR" : "Kreis"
@@ -418,9 +417,6 @@ dict_k1:
         - "ew"
         - "mzw"
         - "syf"
-    "GU":
-        - "gl"
-        - "ug"
     "GTF":
         - "tm"
         - "gl"
@@ -478,7 +474,6 @@ dict_k2_name:
     'DRB' : 'Besondere Dreiecke'
     'VE' : 'Vierecke und regelmäßige Vielecke'
     'FL' : 'Flächeninhalte'
-    'PRI' : 'Prisma' 
 
 
 dict_k2:
@@ -511,7 +506,6 @@ dict_k2:
         - 'gdw'
     "ST":
         - 'arh'
-        - 'stb'
         - 'stk'
         - 'egd'
         - 'igd'
@@ -562,17 +556,11 @@ dict_k2:
         - 'drq'
         - 'tr'
         - 'avv' 
-    "PRI":
-        - 'ebf'
-        - 'sf'
-        - 'no'
-        - 'ri'
 
 
 dict_k3_name:
     'GZ' : 'Ganze Zahlen'
     'RZ' : 'Rationale Zahlen'
-    'KS' : 'Koordinatensystem'
     'TE' : 'Terme'
     'VP' : 'Verhältnisse und Proportionen'
     'PZ' : 'Prozentrechnung und Zinseszinsrechnung'
@@ -597,10 +585,7 @@ dict_k3:
         - 'as'
         - 'md'
         - 'vg'
-
-    "KS":
-        - 'enk'
-        
+       
     "TE":
         - 'ef'
         - 'fg'
@@ -816,7 +801,6 @@ dict_unterkapitel:
     "dt" : "Deltoid"
     "dz" : "Drehzylinder"
     "dzs" : "Dekadisches Zahlensystem"
-    "ebf" : "Eigenschaften und besondere Formen"
     "ed" : "Einteilung der Dreiecke"
     "eda" : "Eigenschaften und Darstellung"
     "ef" : "Einf\u00fchrung"
@@ -827,7 +811,6 @@ dict_unterkapitel:
     "es" : "Eigenschaften, Schr\u00e4griss"
     "et" : "Einf\u00fchrung und Termstruktur"
     "ew" : "Einf\u00fchrung: Winkel"
-    "enk" : "Erweiterung durch negative Koordinaten"
     "ezf" : "Einzeichnen des Funktionsgraphs"
     "fa" : "Fl\u00e4che"
     "fg" : "Formeln und Gleichungen"
@@ -926,13 +909,11 @@ dict_unterkapitel:
     "rw" : "Rechtwinkliges Dreieck (Satz von Thales, Fl\u00e4che, ...)"
     "sch" : "Schr\u00e4griss"
     "sdp" : "Satz des Pythagoras im rechtwinkligen Dreieck"
-    "sf" : "Schnittfl\u00e4che"
     "sp" : "Schwerpunkt"
     "ss" : "Streckensymmetrale"
     "ssg" : "Strecke, Strahl, Gerade"
     "sss" : "Seiten-Seiten-Seiten-Satz"
     "ssw" : "Seiten-Seiten-Winkel-Satz"
-    "stb" : "Statistische Berechnungen"
     "stk" : "Statistische Kennzahlen"
     "stm" : "Streuma\u00dfe (Spannweite, Quartile, Min, Max, empirische Varianz, Standardabweichung)"
     "sts" : "Strahlensatz"
