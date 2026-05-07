@@ -4,6 +4,12 @@ __LaMA ist ein Programm, das AHS-Mathematiklehrer·innen das systematische Abspe
 
 Aktuelle Version: [v5.1.0]
 ## CHANGELOG
+v5.1.1:
+- bug fix: max_integer
+- bug fix: key error translation
+- bug fix: crash when title is None
+- update portable
+  
 v5.1.0:
 - NEW: Internal PDF Viewer
 - NEW: Enable direct selection of tasks in PDF Viewer
