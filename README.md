@@ -6,6 +6,16 @@ Aktuelle Version: [v5.1.1]
 ## CHANGELOG
 BETA v5.1.2:
 - bug fix: escape KeyError collect_content
+- bug fix: repair repo, if index file is missing (auto-refresh_ddb)
+- bug fix: UnboundLocalError, when changed to worksheetwizard
+- bug fix: sage_load - problem with half points (set standard values for typ1 points)
+- bug fix: index error in sage_load
+- bug fix: change resolution of print to 600dpi
+- bug fix: search cria GSY
+- bug fix: print selected pages
+- add autocomplete plaintext
+- enable direct prunt/save from Pdfs in Viewer
+
 
 v5.1.1:
 - bug fix: max_integer
