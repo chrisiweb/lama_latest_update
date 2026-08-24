@@ -1,6 +1,20 @@
-
 \NeedsTeXFormat{LaTeX2e}[2005/12/01]
 \ProvidesPackage{srdp-tables}[2021/11/09]
+%
+% 2026-08-23:
+% Compatibility patch for newer LaTeX / array versions.
+% Changed several state saves from \let to \global\let:
+%   tabu@evr@Gsave
+%   tabu@arc@Gsave
+%   tabu@drsc@Gsave
+%   tabu@ls@Gsave
+%   tabu@rc@Gsave
+%   tabu@cellleft@save
+%   tabu@cellright@save
+%   tabu@celllalign@save
+%   tabu@cellralign@save
+%   tabu@mkarstrut@save
+
 \AtEndOfPackage{\tabu@AtEnd \let\tabu@AtEnd \@undefined}
 \let\tabu@AtEnd\@empty
 \def\TMP@EnsureCode#1={%
@@ -669,37 +683,51 @@
                 \aftergroup\aftergroup\aftergroup\tabu@cleanup
                 \let\tabu@aftergroupcleanup \relax}%
     \fi
-    \let\tabu@arc@Gsave         \tabu@arc@G
+    \global\let\tabu@arc@Gsave         \tabu@arc@G
     \let\tabu@arc@G             \tabu@arc@L   % <init>
-    \let\tabu@drsc@Gsave        \tabu@drsc@G
+    \global\let\tabu@drsc@Gsave        \tabu@drsc@G
     \let\tabu@drsc@G            \tabu@drsc@L  % <init>
-    \let\tabu@ls@Gsave          \tabu@ls@G
+    \global\let\tabu@ls@Gsave          \tabu@ls@G
     \let\tabu@ls@G              \tabu@ls@L    % <init>
-    \let\tabu@rc@Gsave          \tabu@rc@G
+    \global\let\tabu@rc@Gsave          \tabu@rc@G
     \let\tabu@rc@G              \tabu@rc@L    % <init>
-    \let\tabu@evr@Gsave         \tabu@evr@G
+    \global\let\tabu@evr@Gsave\tabu@evr@G
     \let\tabu@evr@G             \tabu@evr@L   % <init>
-    \let\tabu@celllalign@save   \tabu@celllalign
-    \let\tabu@cellralign@save   \tabu@cellralign
-    \let\tabu@cellleft@save     \tabu@cellleft
-    \let\tabu@cellright@save    \tabu@cellright
-    \let\tabu@@celllalign@save  \tabu@@celllalign
-    \let\tabu@@cellralign@save  \tabu@@cellralign
-    \let\tabu@@cellleft@save    \tabu@@cellleft
-    \let\tabu@@cellright@save   \tabu@@cellright
+    % \let\tabu@celllalign@save   \tabu@celllalign
+    % \let\tabu@cellralign@save   \tabu@cellralign
+    % \let\tabu@cellleft@save     \tabu@cellleft
+    % \let\tabu@cellright@save    \tabu@cellright
+    \global\let\tabu@celllalign@save \tabu@celllalign
+    \global\let\tabu@cellralign@save \tabu@cellralign
+    \global\let\tabu@cellleft@save \tabu@cellleft
+    \global\let\tabu@cellright@save \tabu@cellright
+    % \let\tabu@@celllalign@save  \tabu@@celllalign
+    % \let\tabu@@cellralign@save  \tabu@@cellralign
+    % \let\tabu@@cellleft@save    \tabu@@cellleft
+    % \let\tabu@@cellright@save   \tabu@@cellright
+    \global\let\tabu@@celllalign@save \tabu@@celllalign
+    \global\let\tabu@@cellralign@save \tabu@@cellralign
+    \global\let\tabu@@cellleft@save \tabu@@cellleft
+    \global\let\tabu@@cellright@save \tabu@@cellright
     \let\tabu@rowfontreset@save \tabu@rowfontreset
     \let\tabu@@rowfontreset@save\tabu@@rowfontreset
     \let\tabu@rowfontreset      \@empty
     \edef\tabu@alloc@save      {\the\tabu@alloc}%   restore at \tabu@reset
-    \edef\c@taburow@save       {\the\c@taburow}%
-    \edef\tabu@naturalX@save   {\the\tabu@naturalX}%
-    \let\tabu@naturalXmin@save  \tabu@naturalXmin
-    \let\tabu@naturalXmax@save  \tabu@naturalXmax
-    \let\tabu@mkarstrut@save    \tabu@mkarstrut
-    \edef\tabu@clarstrut{%
+    \xdef\c@taburow@save{\the\c@taburow}
+    \xdef\tabu@naturalX@save{\the\tabu@naturalX}
+
+    \global\let\tabu@naturalXmin@save\tabu@naturalXmin
+    \global\let\tabu@naturalXmax@save\tabu@naturalXmax
+
+    % \global\let\tabu@evr@Gsave\tabu@evr@G
+    \global\let\tabu@mkarstrut@save\tabu@mkarstrut
+    % \let\tabu@mkarstrut@save    \tabu@mkarstrut
+    \xdef\tabu@clarstrut{%
         \extrarowheight \the\dimexpr \ht\@arstrutbox-\ht\strutbox \relax
         \extrarowdepth \the\dimexpr \dp\@arstrutbox-\dp\strutbox \relax
-        \let\noexpand\@arraystretch \@ne \noexpand\tabu@rearstrut}%
+        \let\noexpand\@arraystretch \@ne
+        \noexpand\tabu@rearstrut
+        }%
 }% \tabu@setcleanup
 \def\tabu@cleanup {\begingroup
     \globaldefs\@ne         \tabu@everyrowtrue
@@ -712,7 +740,7 @@
     \let\tabu@rc@G          \tabu@rc@Gsave
     \let\tabu@rc@           \tabu@rc@G
     \let\CT@do@color        \relax
-    \let\tabu@evr@G         \tabu@evr@Gsave
+    \let\tabu@evr@G         \@empty
     \let\tabu@celllalign    \tabu@celllalign@save
     \let\tabu@cellralign    \tabu@cellralign@save
     \let\tabu@cellleft      \tabu@cellleft@save
@@ -735,7 +763,8 @@
         \tabu@afterendpar   \tabu@elapsedtime
     \fi
     \tabu@clarstrut
-    \everyrow\expandafter   {\tabu@evr@G}%
+    \everyrow{}
+    %\everyrow\expandafter   {\tabu@evr@G}%
 }% \tabu@cleanup
 \let\tabu@afterendpar \relax
 \def\tabu@setreset {%
